@@ -1,0 +1,397 @@
+body, html {
+  margin: 0;
+  padding: 0;
+ background-color: #121212; /* Dark background for the grid */
+  width: 100%;
+  height: 100%;
+  font-family: 'Raleway', sans-serif; /* Change to Raleway */
+}
+
+
+.background1 {
+  background: url('images/background.jpg') no-repeat center center/cover;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+	border-bottom-left-radius: 20px; /* Round the bottom-left corner */
+  border-bottom-right-radius: 20px; /* Round the bottom-right corner */
+  overflow: hidden; /* Ensures the rounded corners cut off the image properly */
+	background-color: transparent; /* Ensure no white behind the image */
+}
+
+
+.background2 {
+  background: url('images/background2.jpg') no-repeat center center/cover;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+	border-bottom-left-radius: 20px; /* Round the bottom-left corner */
+  border-bottom-right-radius: 20px; /* Round the bottom-right corner */
+  overflow: hidden; /* Ensures the rounded corners cut off the image properly */
+	background-color: transparent; /* Ensure no white behind the image */
+}
+.background3 {
+  background: url('images/background3.jpg') no-repeat center center/cover;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+	border-bottom-left-radius: 20px; /* Round the bottom-left corner */
+  border-bottom-right-radius: 20px; /* Round the bottom-right corner */
+  overflow: hidden; /* Ensures the rounded corners cut off the image properly */
+	background-color: transparent; /* Ensure no white behind the image */
+}
+
+
+
+
+
+
+
+.about-section {
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* White text */
+  padding: 30px 50px; /* Top/Bottom padding and side spacing */
+  display: flex;
+  justify-content: flex-start; /* Align content to the right */
+  text-align: left; /* Right-align the text */
+}
+
+.about-content {
+  max-width: 80%; /* Restrict text width */
+}
+
+.about-content h2 {
+  font-size: 2rem; /* Large title */
+  font-weight: 400; /* Bold font */
+  margin-bottom: 20px; /* Spacing below the heading */
+}
+
+.about-content p {
+  font-size: 2rem; /* Larger paragraph text */
+	 font-weight: 400; /* Bold font */
+  line-height: 1; /* Spacing between lines */
+  margin: 0; /* Remove default paragraph margin */
+}
+
+
+
+
+
+
+
+h1 {
+  font-size: 60px;
+font-weight: 600; /* Make it the boldest */
+  color: white;
+  margin: 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.subtitle {
+  font-size: 40px;
+	font-weight: 600; /* Make it bolder */
+  color: white;
+  margin: 30px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-align: right;
+}
+
+
+/* Photo/video Grid Styling that works*
+}
+
+
+/* General Grid Styles */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Default: 6 items wide for large screens */
+  gap: 10px;
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures consistent size without distortion */
+  border-radius: 8px; /* Keeps rounded corners */
+  cursor: pointer;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) { /* Medium screens (tablets, smaller laptops) */
+  .photo-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 items wide */
+  }
+}
+
+@media (max-width: 768px) { /* Small screens (phones, small tablets) */
+  .photo-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 items wide */
+  }
+}
+
+@media (max-width: 480px) { /* Very small screens (narrow phones) */
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 items wide */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Modal Styles This is the pop up style, this is FINAL. DO NOT CHANGE.*/
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent dark overlay */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  width: 90%; /* Increase width for larger video */
+  max-width: 1200px; /* Allow bigger max size for larger screens */
+  background: none; /* Transparent background */
+  padding: 0; /* Remove padding for a cleaner look */
+  border-radius: 0; /* Optional: Remove rounded corners */
+  overflow: hidden;
+}
+
+.modal-content iframe {
+  width: 100%;
+  height: 70vh; /* Dynamic height based on viewport */
+  border: none;
+}
+
+.modal-content p {
+  margin-top: 10px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff; /* Ensure text remains visible */
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff; /* Ensure "X" button is visible */
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* STORY style.*/
+
+/* General Styles for the Story Section */
+/* General Styles for the Story Section */
+.story {
+  display: flex; /* Align image and text side by side */
+  flex-wrap: nowrap; /* Prevent wrapping unless screen is small */
+  align-items: center; /* Align items vertically in the middle */
+  justify-content: space-between; /* Space out elements */
+  gap: 20px; /* Add space between elements */
+  padding: 20px;
+  background-color: #111; /* Dark background for contrast */
+  color: #fff; /* White text */
+}
+
+.story-image {
+  flex: 0 1 40%; /* Image takes up 40% of available space */
+  text-align: center; /* Center-align for smaller screens */
+}
+
+.story-image img {
+  max-width: 100%; /* Ensure image scales responsively */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: Rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+.story-text {
+  flex: 1 1 60%; /* Text takes up the remaining 60% */
+  padding: 20px;
+  text-align: left; /* Align text to the left */
+}
+
+.story-text h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #ffcc00; /* Highlight color for heading */
+}
+
+.story-text p {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .story {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items */
+  }
+
+  .story-image,
+  .story-text {
+    flex: 1 1 100%; /* Each takes up full width */
+  }
+
+  .story-text {
+    text-align: center; /* Center-align text for mobile */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* Footer Styling */
+footer {
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* Light text */
+  padding-top: 20px;
+	padding-right: 50px;
+	padding-left: 50px;
+	padding-bottom: 20px;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  max-width: 300px;
+}
+
+.footer-left a {
+  color: #ffffff; /* Subtle pop color for links */
+  text-decoration: none;
+}
+
+.footer-left a:hover {
+  text-decoration: underline;
+}
+
+.footer-right ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-right ul li {
+  margin-bottom: 8px;
+}
+
+.footer-right ul li a {
+  color: #ffffff; /* Subtle pop color for links */
+  text-decoration: none;
+}
+
+.footer-right ul li a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+/* Hamburger Menu Styling */
+.menu-container {
+  bottom: 0px;
+  right: 15px;
+  z-index: 1000;
+}
+
+.hamburger-menu {
+  font-size: 3rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu-links {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 250px;
+  height: 100%;
+  padding: 20px;
+  gap: 20px;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0);
+}
+
+.menu-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 2rem;
+  transition: color 0.3s ease;
+}
+
+.menu-links a:hover {
+  color: #fff; /* Highlight color */
+}
+
+/* Show menu when active */
+.menu-links.show {
+  display: flex;
+}
