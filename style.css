@@ -5,52 +5,100 @@ body, html {
   width: 100%;
   height: 100%;
   font-family: 'Raleway', sans-serif; /* Change to Raleway */
+  
+
 }
 
 
 .background1 {
   background: url('images/background.jpg') no-repeat center center/cover;
   width: 100%;
-  height: 100%;
+  height: 75%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-	border-bottom-left-radius: 20px; /* Round the bottom-left corner */
-  border-bottom-right-radius: 20px; /* Round the bottom-right corner */
+	border-bottom-left-radius: 0px; /* Round the bottom-left corner */
+  border-bottom-right-radius: 0px; /* Round the bottom-right corner */
   overflow: hidden; /* Ensures the rounded corners cut off the image properly */
 	background-color: transparent; /* Ensure no white behind the image */
 }
 
 
 .background2 {
-  background: url('images/background2.jpg') no-repeat center center/cover;
+  background: url('images/background8.jpg') no-repeat center center/cover;
   width: 100%;
-  height: 100%;
+  height: 75%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-	border-bottom-left-radius: 20px; /* Round the bottom-left corner */
-  border-bottom-right-radius: 20px; /* Round the bottom-right corner */
+	border-bottom-left-radius: 0px; /* Round the bottom-left corner */
+  border-bottom-right-radius: 0px; /* Round the bottom-right corner */
   overflow: hidden; /* Ensures the rounded corners cut off the image properly */
 	background-color: transparent; /* Ensure no white behind the image */
 }
+
+
 .background3 {
-  background: url('images/background3.jpg') no-repeat center center/cover;
+  background: url('images/location5.jpg') no-repeat center center/cover;
   width: 100%;
-  height: 100%;
+  height: 75%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-	border-bottom-left-radius: 20px; /* Round the bottom-left corner */
-  border-bottom-right-radius: 20px; /* Round the bottom-right corner */
+	border-bottom-left-radius: 0px; /* Round the bottom-left corner */
+  border-bottom-right-radius: 0px; /* Round the bottom-right corner */
   overflow: hidden; /* Ensures the rounded corners cut off the image properly */
 	background-color: transparent; /* Ensure no white behind the image */
 }
 
 
+.background4 {
+  background: url('images/background9.jpg') no-repeat center center/cover;
+  width: 100%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+	border-bottom-left-radius: 0px; /* Round the bottom-left corner */
+  border-bottom-right-radius: 0px; /* Round the bottom-right corner */
+  overflow: hidden; /* Ensures the rounded corners cut off the image properly */
+	background-color: transparent; /* Ensure no white behind the image */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a:link {
+  color: rgb(255, 255, 255); /* Default link color */
+}
+a:visited {
+  color: rgb(255, 255, 255); /* Color for visited links */
+}
+a:hover {
+  color: rgb(255, 255, 255); /* Color when hovering over the link */
+  text-decoration: underline; /* Optional for hover effect */
+}
+a:active {
+  color: rgb(255, 255, 255); /* Color when the link is being clicked */
+}
 
 
 
@@ -61,26 +109,78 @@ body, html {
   color: #ffffff; /* White text */
   padding: 30px 50px; /* Top/Bottom padding and side spacing */
   display: flex;
-  justify-content: flex-start; /* Align content to the right */
-  text-align: left; /* Right-align the text */
+  justify-content: center; /* Center content horizontally */
+  text-align: left; /* Left-align the text */
 }
 
 .about-content {
-  max-width: 80%; /* Restrict text width */
+  max-width: 1200px; /* Restrict text width on large screens */
+  width: 100%; /* Make it responsive to smaller screens */
+  margin: 0 auto; /* Center the content block */
+  padding: 10px; /* Add spacing inside */
 }
 
 .about-content h2 {
-  font-size: 2rem; /* Large title */
-  font-weight: 400; /* Bold font */
+  font-size: 3rem; /* Large title */
+  font-weight: 600; /* Bold font */
   margin-bottom: 20px; /* Spacing below the heading */
 }
 
 .about-content p {
   font-size: 2rem; /* Larger paragraph text */
-	 font-weight: 400; /* Bold font */
-  line-height: 1; /* Spacing between lines */
+  font-weight: 400; /* Normal font weight */
+  line-height: 1.5; /* Improve readability with proper spacing */
   margin: 0; /* Remove default paragraph margin */
 }
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1024px) {
+  .about-content {
+    padding: 20px; /* Adjust padding for medium-sized screens */
+    max-width: 90%; /* Allow content to spread slightly more */
+  }
+
+  .about-content p {
+    font-size: 1.8rem; /* Slightly reduce paragraph text size */
+    line-height: 1.4; /* Adjust line spacing for readability */
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 20px 30px; /* Reduce overall padding for tablets */
+  }
+
+  .about-content {
+    padding: 10px; /* Tighten padding */
+    max-width: 100%; /* Content fills smaller screens */
+  }
+
+  .about-content h2 {
+    font-size: 2.5rem; /* Reduce title size for smaller screens */
+  }
+
+  .about-content p {
+    font-size: 1.6rem; /* Reduce paragraph text size */
+    line-height: 1.4; /* Maintain line spacing */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 15px 20px; /* Minimal padding for phones */
+  }
+
+  .about-content h2 {
+    font-size: 2rem; /* Smaller title size for very small screens */
+  }
+
+  .about-content p {
+    font-size: 1.4rem; /* Smaller text size */
+    line-height: 1.3; /* Compact line spacing for mobile */
+  }
+}
+
 
 
 
@@ -89,7 +189,7 @@ body, html {
 
 
 h1 {
-  font-size: 60px;
+  font-size: 50px;
 font-weight: 600; /* Make it the boldest */
   color: white;
   margin: 25px;
@@ -100,7 +200,7 @@ font-weight: 600; /* Make it the boldest */
 
 .subtitle {
   font-size: 40px;
-	font-weight: 600; /* Make it bolder */
+	font-weight: 200; /* Make it bolder */
   color: white;
   margin: 30px;
   position: absolute;
@@ -110,29 +210,38 @@ font-weight: 600; /* Make it the boldest */
 }
 
 
-/* Photo/video Grid Styling that works*
-}
 
 
-/* General Grid Styles */
+
+
+
+
+
+
+
+
+
+
+
+/* General Grid Styles for video */
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* Default: 6 items wide for large screens */
-  gap: 10px;
+  grid-template-columns: repeat(3, 1fr); /* Default: 6 items wide for large screens */
+  gap: 20px;
 }
 
 .photo-item img {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ensures consistent size without distortion */
-  border-radius: 8px; /* Keeps rounded corners */
+  border-radius: 0px; /* Keeps rounded corners */
   cursor: pointer;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) { /* Medium screens (tablets, smaller laptops) */
   .photo-grid {
-    grid-template-columns: repeat(4, 1fr); /* 4 items wide */
+    grid-template-columns: repeat(3, 1fr); /* 4 items wide */
   }
 }
 
@@ -222,74 +331,6 @@ font-weight: 600; /* Make it the boldest */
 
 
 
-/* STORY style.*/
-
-/* General Styles for the Story Section */
-/* General Styles for the Story Section */
-.story {
-  display: flex; /* Align image and text side by side */
-  flex-wrap: nowrap; /* Prevent wrapping unless screen is small */
-  align-items: center; /* Align items vertically in the middle */
-  justify-content: space-between; /* Space out elements */
-  gap: 20px; /* Add space between elements */
-  padding: 20px;
-  background-color: #111; /* Dark background for contrast */
-  color: #fff; /* White text */
-}
-
-.story-image {
-  flex: 0 1 40%; /* Image takes up 40% of available space */
-  text-align: center; /* Center-align for smaller screens */
-}
-
-.story-image img {
-  max-width: 100%; /* Ensure image scales responsively */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 8px; /* Optional: Rounded corners */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow */
-}
-
-.story-text {
-  flex: 1 1 60%; /* Text takes up the remaining 60% */
-  padding: 20px;
-  text-align: left; /* Align text to the left */
-}
-
-.story-text h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  color: #ffcc00; /* Highlight color for heading */
-}
-
-.story-text p {
-  font-size: 2rem;
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-  .story {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center align items */
-  }
-
-  .story-image,
-  .story-text {
-    flex: 1 1 100%; /* Each takes up full width */
-  }
-
-  .story-text {
-    text-align: center; /* Center-align text for mobile */
-  }
-}
-
-
-
-
-
-
-
 
 
 
@@ -297,49 +338,30 @@ font-weight: 600; /* Make it the boldest */
 footer {
   background-color: #121212; /* Dark background */
   color: #ffffff; /* Light text */
-  padding-top: 20px;
-	padding-right: 50px;
-	padding-left: 50px;
-	padding-bottom: 20px;
+  padding: 20px 50px; /* Consistent padding */
   font-size: 14px;
+  text-align: center; /* Center-align all text */
 }
 
 .footer-container {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center align content horizontally */
+  gap: 10px; /* Space between each line */
 }
 
-.footer-left {
-  max-width: 300px;
+.footer-container p {
+  margin: 0; /* Remove default paragraph margin */
+  line-height: 1.6; /* Add spacing between lines for readability */
 }
 
-.footer-left a {
-  color: #ffffff; /* Subtle pop color for links */
-  text-decoration: none;
+.footer-container a {
+  color: #ffffff; /* White links */
+  text-decoration: none; /* Remove underline */
 }
 
-.footer-left a:hover {
-  text-decoration: underline;
-}
-
-.footer-right ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-right ul li {
-  margin-bottom: 8px;
-}
-
-.footer-right ul li a {
-  color: #ffffff; /* Subtle pop color for links */
-  text-decoration: none;
-}
-
-.footer-right ul li a:hover {
-  text-decoration: underline;
+.footer-container a:hover {
+  text-decoration: underline; /* Add underline on hover */
 }
 
 
@@ -353,13 +375,15 @@ footer {
 
 /* Hamburger Menu Styling */
 .menu-container {
-  bottom: 0px;
-  right: 15px;
+  position: absolute;
+  top: 7px;
+  right: 20px;
+  left: auto;
   z-index: 1000;
 }
 
 .hamburger-menu {
-  font-size: 3rem;
+  font-size: 4rem;
   background: none;
   border: none;
   color: #fff;
@@ -394,4 +418,62 @@ footer {
 /* Show menu when active */
 .menu-links.show {
   display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* location gallery */
+
+/* Reset styles for location gallery */
+.location-gallery * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Location gallery container */
+.location-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Always 3 images per row */
+  gap: 15px; /* Adjust spacing between images */
+  margin: 0px; /* Adjust spacing around the gallery */
+}
+
+/* Individual gallery images */
+.location-gallery-item {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  border-radius: 0px; /* Optional: rounded corners */
+}
+
+/* Lightbox styles */
+#lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border: 0px solid #fff;
+  border-radius: 0px;
 }
