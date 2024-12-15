@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESPEN GJELSTEN</title>
+  <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+  <div class="background3">
+    <h1>
+      <a href="index.html" class="site-title">ESPEN GJELSTEN</a>
+    </h1>
+    <p class="subtitle">
+      Director & cinematographer
+		<br> based in Norway
+
+  
+
+    </p>
+  </div>
+
+
+
+
+
+	<!-- Text Section -->
+
+	<section class="about-section">
+    <div class="about-content">
+      <h2>Sunnmøre: Cinematic and Ever-Changing</h2>
+      <p>
+        <br> 
+  Sunnmøre isn’t just beautiful—it’s made for storytelling. From the dramatic Sunnmøre Alps to quiet fjords and coastal villages, the light and seasons here constantly transform the landscape.
+  <br><br>
+  It’s a filmmaker’s dream—one of the most stunning and versatile locations in the world to bring stories to life.
+
+      </p>
+    </div>
+  </section>
+
+
+  <br>
+
+
+			<!-- GALLERY-->
+      <div class="location-gallery">
+        <!-- Add images here; a row = 3 images -->
+        <img src="/images/location1.jpg" alt="Location 1" class="location-gallery-item" onclick="openLightbox(this)">
+        <img src="/images/location2.jpg" alt="Location 2" class="location-gallery-item" onclick="openLightbox(this)">
+        <img src="/images/location3.jpg" alt="Location 3" class="location-gallery-item" onclick="openLightbox(this)">
+
+        <img src="/images/location4.jpg" alt="Location 4" class="location-gallery-item" onclick="openLightbox(this)">
+        <img src="/images/location5.jpg" alt="Location 5" class="location-gallery-item" onclick="openLightbox(this)">
+        <img src="/images/location6.jpg" alt="Location 6" class="location-gallery-item" onclick="openLightbox(this)">
+
+        <img src="/images/location7.jpg" alt="Location 7" class="location-gallery-item" onclick="openLightbox(this)">
+        <img src="/images/location8.jpg" alt="Location 8" class="location-gallery-item" onclick="openLightbox(this)">
+        <img src="/images/location9.jpg" alt="Location 9" class="location-gallery-item" onclick="openLightbox(this)">
+
+        <img src="/images/location10.jpg" alt="Location 10" class="location-gallery-item" onclick="openLightbox(this)">
+        <img src="/images/location11.jpg" alt="Location 11" class="location-gallery-item" onclick="openLightbox(this)">
+        <img src="/images/location12.jpg" alt="Location 12" class="location-gallery-item" onclick="openLightbox(this)">
+
+        <img src="/images/location13.jpg" alt="Location 10" class="location-gallery-item" onclick="openLightbox(this)">
+        <img src="/images/location14.jpg" alt="Location 11" class="location-gallery-item" onclick="openLightbox(this)">
+        <img src="/images/location15.jpg" alt="Location 12" class="location-gallery-item" onclick="openLightbox(this)">
+      </div>
+      
+      
+      <!-- Lightbox for enlarged images -->
+      <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="">
+      </div>
+      
+      <script src="script.js"></script>
+
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+
+	
+	
+	 
+
+
+
+
+
+
+	
+
+ <!-- Footer Section -->
+ <br>
+
+ <footer>
+  <div class="footer-container">
+    <p>Company: Sorentio</p>
+    <p>Contact: <a href="mailto:production@sorentio.no">production@sorentio.no</a></p>
+    <p>Follow: 
+      <a href="https://instagram.com/espengjelsten" target="_blank">Instagram</a> | 
+      <a href="https://linkedin.com/gjelsten" target="_blank">LinkedIn</a>
+    </p>
+     
+    
+    <!-- Hamburger Menu at the bottom START -->
+     <div class="menu-container">
+      <button class="hamburger-menu" aria-label="Toggle navigation">
+        ☰
+      </button>
+      <nav class="menu-links">
+        </p>
+
+        <h2 class="menu-heading">Journal</h2>
+      
+        <a href="journal-sunnmore.html">Sunnmøre: Cinematic and Ever-Changing</a>
+
+      </nav>
+    </div>
+ <!-- Hamburger Menu at the bottom END -->
+
+
+
+  </div>
+</footer>
+
+<br>
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  <!-- Modal. The thing that makes videos pop up in a nice overlay. Do not remove. -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content">
+      <button class="close-modal" id="closeModal">&times;</button>
+      <iframe id="videoPlayer" src="" frameborder="0" allowfullscreen></iframe>
+      <p id="videoDescription"></p>
+    </div>
+  </div>
+
+  <script src="modal.js"></script>
+
+
+
+	
+	
+	<script src="menu.js"></script>
+
+	
+	 <!-- end of site -->
+	
+</body>
+</html>

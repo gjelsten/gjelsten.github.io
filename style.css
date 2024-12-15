@@ -187,16 +187,26 @@ a:active {
 
 
 
-
 h1 {
   font-size: 50px;
-font-weight: 600; /* Make it the boldest */
+  font-weight: 600; /* Make it the boldest */
   color: white;
   margin: 25px;
   position: absolute;
   top: 0;
   left: 0;
 }
+
+h1 a {
+  text-decoration: none; /* Removes the underline */
+  color: inherit; /* Inherits the color from the <h1> */
+}
+
+h1 a:hover {
+  text-decoration: none; /* Ensures no underline on hover */
+  color: inherit; /* Keeps color consistent on hover */
+}
+
 
 .subtitle {
   font-size: 40px;
@@ -375,11 +385,9 @@ footer {
 
 /* Hamburger Menu Styling */
 .menu-container {
-  position: absolute;
-  top: 7px;
-  right: 20px;
-  left: auto;
-  z-index: 1000;
+  position: absolute; /* Positioned relative to the footer */
+  right: 20px; /* 20px from the right side */
+  z-index: 1000; /* Ensures visibility over other content */
 }
 
 .hamburger-menu {
@@ -390,39 +398,54 @@ footer {
   cursor: pointer;
 }
 
+/* Menu Links Container */
 .menu-links {
   display: none;
-  flex-direction: column;
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align everything to the left */
+  justify-content: flex-start; /* Start content from the top */
   position: fixed;
   top: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.9);
   width: 250px;
   height: 100%;
-  padding: 20px;
-  gap: 20px;
-  box-shadow: -4px 0 10px rgba(0, 0, 0, 0);
+  padding: 20px; /* Consistent padding for all content */
+  gap: 20px; /* Space between items */
+  box-sizing: border-box; /* Include padding in width */
 }
 
+/* Journal Heading */
+.menu-heading {
+  margin: 0; /* Remove default browser margins */
+  padding: 0; /* Remove any extra padding */
+  font-size: 2rem; /* Bold heading size */
+  font-weight: bold; /* Make the heading bold */
+  color: #fff; /* White text color */
+  text-align: left; /* Aligns text to the left */
+  width: 100%; /* Ensures heading spans full width of container */
+}
+
+/* Menu Links Styling */
 .menu-links a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 2rem;
-  transition: color 0.3s ease;
+  text-decoration: none; /* Removes underline */
+  color: #fff; /* White text color */
+  font-size: 1.5rem; /* Consistent size for menu items */
+  transition: color 0.3s ease; /* Smooth hover effect */
+  text-align: left; /* Ensures text is aligned to the left */
+  display: block; /* Makes links take up the full width of the container */
+  margin: 0; /* Removes any default margins */
+  padding: 0; /* Ensures no extra padding */
 }
 
 .menu-links a:hover {
-  color: #fff; /* Highlight color */
+  color: #aaa; /* Optional hover effect for better UX */
 }
 
 /* Show menu when active */
 .menu-links.show {
   display: flex;
 }
-
-
-
-
 
 
 
