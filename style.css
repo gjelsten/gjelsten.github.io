@@ -350,13 +350,13 @@ footer {
   color: #ffffff; /* Light text */
   padding: 20px 50px; /* Consistent padding */
   font-size: 14px;
-  text-align: center; /* Center-align all text */
+  text-align: left; /* Center-align all text */
 }
 
 .footer-container {
   display: flex;
   flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center align content horizontally */
+  align-items: left; /* Center align content horizontally */
   gap: 10px; /* Space between each line */
 }
 
