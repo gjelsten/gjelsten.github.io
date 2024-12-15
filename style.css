@@ -386,7 +386,7 @@ footer {
 /* Hamburger Menu Styling */
 .menu-container {
   position: absolute; /* Positioned relative to the footer */
-  right: 4%; /* 20px from the right side */
+  right: 2%; /* 20px from the right side */
   z-index: 1000; /* Ensures visibility over other content */
 }
 
