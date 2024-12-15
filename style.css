@@ -348,7 +348,7 @@ h1 a:hover {
 footer {
   background-color: #121212; /* Dark background */
   color: #ffffff; /* Light text */
-  padding: 20px 50px; /* Consistent padding */
+  padding: 10px 7%; /* Consistent padding */
   font-size: 14px;
   text-align: left; /* Center-align all text */
 }
