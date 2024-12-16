@@ -72,7 +72,13 @@ body, html {
 
 
 
-
+/* Icons */
+.material-icons {
+  font-family: 'Material Icons';
+  font-size: 60px; /* Adjust size as needed */
+  color: #ffffff; /* Match your site color */
+  text-decoration: none;
+}
 
 
 
