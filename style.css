@@ -403,9 +403,44 @@ h3 {
 
 /* Right Section: Icons */
 .footer-right {
-  display: flex;
-  gap: 20px; /* Spacing between icons */
+  display: flex; /* Keep the icons in a horizontal row */
+  flex-direction: column; /* Stack the icons and Privacy Policy */
+  align-items: center; /* Center-align both the icons and the Privacy Policy */
 }
+
+.footer-icons {
+  display: flex; /* Keep the icons in a single row */
+  gap: 20px; /* Space between icons */
+}
+
+.footer-privacy {
+  margin-top: 20px; /* Add space between icons and Privacy Policy */
+  text-align: center; /* Center-align the Privacy Policy */
+}
+
+.privacy-link {
+  color: #f4f4f4; /* Match the footer text color */
+  text-decoration: none; /* Remove underline */
+  font-size: 14px; /* Slightly smaller font */
+  transition: color 0.3s ease;
+}
+
+.privacy-link:hover {
+  color: #ff9800; /* Highlight color on hover */
+}
+
+
+.privacy-link {
+  color: #f4f4f4; /* Match footer text color */
+  text-decoration: none; /* Remove underline */
+  font-size: 14px; /* Slightly smaller font */
+  transition: color 0.3s ease;
+}
+
+.privacy-link:hover {
+  color: #ff9800; /* Highlight color on hover */
+}
+
 
 .icon-link {
   color: #f4f4f4;
@@ -429,6 +464,7 @@ h3 {
     margin-top: 20px;
   }
 }
+
 
 
 
