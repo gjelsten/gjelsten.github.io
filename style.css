@@ -382,86 +382,78 @@ h3 {
 /* Footer Styling */
 /* General Footer Styling */
 .footer {
-  background-color: #121212; /* Dark background */
-  color: #f4f4f4; /* Light text */
-  padding: 40px;
+  padding: 20px 40px 20px; /* Reduced top padding */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-contact {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.footer-contact h2 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.footer-contact p {
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.footer-social {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 30px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  gap: 32px;
+  font-size: 0.9rem;
 }
 
-/* Left Section: Text */
-.footer-left h2 {
-  font-family: 'Raleway', sans-serif;
-  font-size: 28px;
-  font-weight: 600;
-  line-height: 1.4;
-  margin: 0;
-  text-align: left;
+/* Specific overrides for footer bottom text */
+.footer-bottom .copyright,
+.footer-bottom .privacy-link {
+  color: rgba(255, 255, 255, 0.103) !important; /* Reduced from 0.5 to 0.3 for a darker shade */
 }
 
-/* Right Section: Icons */
-.footer-right {
-  display: flex; /* Keep the icons in a horizontal row */
-  flex-direction: column; /* Stack the icons and Privacy Policy */
-  align-items: center; /* Center-align both the icons and the Privacy Policy */
+.footer-bottom .privacy-link:hover {
+  color: rgba(255, 255, 255, 0.103) !important; /* Reduced hover brightness to match */
+  text-decoration: none !important;
 }
 
-.footer-icons {
-  display: flex; /* Keep the icons in a single row */
-  gap: 20px; /* Space between icons */
+/* Remove any existing link styling */
+.footer-bottom .privacy-link:visited,
+.footer-bottom .privacy-link:link,
+.footer-bottom .privacy-link:active {
+  color: rgba(255, 255, 255, 0.103) !important; /* Matched to the darker shade */
+  text-decoration: none !important;
 }
 
-.footer-privacy {
-  margin-top: 20px; /* Add space between icons and Privacy Policy */
-  text-align: center; /* Center-align the Privacy Policy */
-}
-
-.privacy-link {
-  color: #f4f4f4; /* Match the footer text color */
-  text-decoration: none; /* Remove underline */
-  font-size: 14px; /* Slightly smaller font */
-  transition: color 0.3s ease;
-}
-
-.privacy-link:hover {
-  color: #ff9800; /* Highlight color on hover */
-}
-
-
-.privacy-link {
-  color: #f4f4f4; /* Match footer text color */
-  text-decoration: none; /* Remove underline */
-  font-size: 14px; /* Slightly smaller font */
-  transition: color 0.3s ease;
-}
-
-.privacy-link:hover {
-  color: #ff9800; /* Highlight color on hover */
-}
-
-
-.icon-link {
-  color: #f4f4f4;
-  font-size: 24px;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.icon-link:hover {
-  color: #ff9800; /* Highlight color */
-}
-
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
   .footer {
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 30px 20px 20px;
   }
-
-  .footer-right {
-    margin-top: 20px;
+  
+  .footer-contact h2 {
+    font-size: 1.75rem;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
   }
 }
 
