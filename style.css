@@ -596,21 +596,23 @@ h3 {
 /* Journal Gallery Container */
 .journal-gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 items per row */
-  gap: 15px; /* Space between items */
-  margin: 0; /* No outer margin */
-}
-
-/* Journal Item Wrapper */
-.journal-item {
-  position: relative;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
   width: 100%;
-  padding-top: 66.67%; /* 3:2 aspect ratio */
-  overflow: hidden;
-  background-color: #000;
 }
 
-/* Journal Images */
+.journal-gallery > div {
+  width: 100%;
+}
+
+.journal-item {
+  width: 100%;
+  position: relative;
+  padding-top: 56.25%; /* This creates 16:9 aspect ratio (9/16 = 0.5625 = 56.25%) */
+  overflow: hidden;
+}
+
 .journal-gallery-item {
   position: absolute;
   top: 0;
@@ -618,8 +620,22 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  cursor: pointer;
+}
+
+/* Tablet view */
+@media (max-width: 1024px) {
+  .journal-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 640px) {
+  .journal-gallery {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }
 
 /* Journal Caption Styling */
@@ -650,15 +666,15 @@ h3 {
 }
 
 /* Responsive Layout */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .journal-gallery {
-    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+    grid-template-columns: repeat(2, 1fr); /* Shows 2 items in a row */
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .journal-gallery {
-    grid-template-columns: repeat(1, 1fr); /* 1 item per row */
+    grid-template-columns: 1fr; /* Shows 1 item in a row */
   }
 }
 
