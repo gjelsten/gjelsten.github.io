@@ -596,7 +596,7 @@ h3 {
 
 
 
-/* Reset styles for all elements within the journal-gallery */
+/* journal-gallery */
 .journal-gallery * {
   margin: 0;
   padding: 0;
@@ -682,11 +682,7 @@ h3 {
   }
 }
 
-@media (max-width: 640px) {
-  .journal-gallery {
-    grid-template-columns: 1fr; /* Shows 1 item in a row */
-  }
-}
+
 
 
 
