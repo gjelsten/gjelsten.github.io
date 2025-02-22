@@ -302,7 +302,7 @@ h3 {
 
 @media (max-width: 768px) { /* Small screens (phones, small tablets) */
   .photo-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 items wide */
+    grid-template-columns: repeat(2, 1fr); /* 3 items wide */
   }
 }
 
