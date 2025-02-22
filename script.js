@@ -13,3 +13,5 @@ function openLightbox(img) {
     lightbox.style.display = 'none';
   }
   
+
+

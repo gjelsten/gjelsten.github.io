@@ -11,7 +11,7 @@ body, html {
 
 
 .background1 {
-  background: url('images/background.jpg') no-repeat center center/cover;
+  background: url('images/background11.jpg') no-repeat center center/cover;
   width: 100%;
   height: 75%;
   display: flex;
@@ -69,6 +69,19 @@ body, html {
 	background-color: transparent; /* Ensure no white behind the image */
 }
 
+.background5 {
+  background: url('images/Portfolio-G1.jpg') no-repeat center center/cover;
+  width: 100%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+	border-bottom-left-radius: 0px; /* Round the bottom-left corner */
+  border-bottom-right-radius: 0px; /* Round the bottom-right corner */
+  overflow: hidden; /* Ensures the rounded corners cut off the image properly */
+	background-color: transparent; /* Ensure no white behind the image */
+}
 
 
 
@@ -377,10 +390,7 @@ h3 {
 
 
 /* Footer Styling */
-/* Footer Styling */
 
-/* Footer Styling */
-/* General Footer Styling */
 .footer {
   padding: 20px 40px 20px; /* Reduced top padding */
 }
@@ -397,14 +407,14 @@ h3 {
 
 .footer-contact h2 {
   font-size: 2rem;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
   color: #ffffff;
 }
 
 .footer-contact p {
   font-size: 1.1rem;
   color: #ffffff;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .footer-social {
@@ -694,31 +704,176 @@ h3 {
 
 
 /* Back to Index Button */
-.back-to-index {
+.back-button-container {
+  margin: 40px 0;
   text-align: center;
-  margin: 40px 0 20px; /* Adjusts spacing from content */
 }
 
-.back-link {
-  display: inline-flex;
-  align-items: center; /* Centers icon with text */
-  font-family: 'Raleway', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
+.modern-back-button {
+  display: inline-block;
+  padding: 12px 32px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  color: white;
   text-decoration: none;
-  color: #333; /* Button text color */
-  padding: 10px 20px;
-  border: 2px solid #333; /* Button border */
-  border-radius: 4px; /* Slightly rounded corners */
-  transition: all 0.3s ease; /* Smooth hover effect */
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
-.back-link i {
-  margin-right: 8px; /* Spacing between icon and text */
-  font-size: 18px; /* Icon size */
+.contact-button-container {
+  position: absolute;
+  top: 30px;
+  right: 30px;
 }
 
-.back-link:hover {
-  color: #fff;
-  background-color: #333; /* Inverts color on hover */
+.modern-contact-button {
+  display: inline-block;
+  padding: 12px 32px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* Adjust position for mobile */
+@media (max-width: 768px) {
+  .contact-button-container {
+    top: 20px;
+    right: 20px;
+  }
+  
+  .modern-contact-button {
+    padding: 8px 24px;
+  }
+}
+
+/* Form Styles */
+.connect-section {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.connect-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.connect-intro {
+    text-align: center;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.modern-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.modern-form input,
+.modern-form textarea {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.modern-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.modern-form input::placeholder,
+.modern-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.modern-submit-button {
+    display: inline-block;
+    padding: 12px 32px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    background: transparent;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    width: auto;
+    margin: 20px 0 0 auto;
+    font-family: inherit;
+}
+
+/* Focus states */
+.modern-form input:focus,
+.modern-form textarea:focus {
+    outline: none;
+    border-color: white;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .connect-section {
+        margin: 40px auto;
+    }
+    .modern-form {
+        padding: 0 20px;
+    }
+}
+
+/* Hide the line break by default */
+.name-break {
+    display: none;
+}
+
+/* Show the line break when screen gets smaller */
+@media (max-width: 768px) {
+    .name-break {
+        display: inline;
+    }
+}
+
+/* Form message styles */
+.form-message {
+    display: none;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+#success-message {
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+}
+
+#error-message {
+    color: #f44336;
+    border: 1px solid #f44336;
+}
+
+.error-message {
+    color: #f44336;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+    .contact-info-container {
+        grid-template-columns: 1fr;
+    }
 }
