@@ -132,10 +132,10 @@ a:active {
 }
 
 .about-content {
-  max-width: 1400px; /* Increased from 1200px */
+  max-width: 1400px;
   width: 100%;
   margin: 0 auto;
-  padding: 10px;
+  padding: 0.625rem; /* 10px to rem */
 }
 
 .about-content h2 {
@@ -606,8 +606,8 @@ h3 {
 .journal-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-bottom: 40px;
+  gap: 1.5rem; /* 24px to rem */
+  margin-bottom: 2.5rem; /* 40px to rem */
   width: 100%;
 }
 
@@ -635,7 +635,11 @@ h3 {
 @media (max-width: 1024px) {
   .journal-gallery {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 1.25rem; /* 20px to rem */
+  }
+  
+  .journal-caption {
+    font-size: 1.25rem; /* Slightly smaller for tablets */
   }
 }
 
@@ -643,13 +647,17 @@ h3 {
 @media (max-width: 640px) {
   .journal-gallery {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 1rem; /* 16px to rem */
+  }
+  
+  .journal-caption {
+    font-size: 1.125rem; /* Smaller for mobile */
   }
 }
 
 /* Journal Caption Styling */
 .journal-link .journal-caption {
-  margin-top: 10px;
+  margin-top: 0.625rem;
   font-size: 1.5rem;
   color: #ffffff;
   text-align: left;
