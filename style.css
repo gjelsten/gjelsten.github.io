@@ -132,20 +132,20 @@ a:active {
 }
 
 .about-content {
-  max-width: 1400px;
+  max-width: 1600px; /* Increased from 1400px (or 1200px) */
   width: 100%;
   margin: 0 auto;
   padding: 0.625rem; /* 10px to rem */
 }
 
 .about-content h2 {
-  font-size: 3rem; /* Large title */
+  font-size: 4rem; /* Large title */
   font-weight: 600; /* Bold font */
   margin-bottom: 20px; /* Spacing below the heading */
 }
 
 .about-content p {
-  font-size: 2rem; /* Larger paragraph text */
+  font-size: 3rem; /* Larger paragraph text */
   font-weight: 400; /* Normal font weight */
   line-height: 1.5; /* Improve readability with proper spacing */
   margin: 0; /* Remove default paragraph margin */
@@ -239,7 +239,7 @@ h1 a:hover {
 
 
 h3 {
-  font-size: 2rem; /* Default for large screens */
+  font-size: 3rem; /* Default for large screens */
   font-weight: 600; /* Regular weight */
   color: white; /* Matches the theme */
   margin: 15px 0; /* Adjust spacing as needed */
@@ -405,7 +405,7 @@ h3 {
 }
 
 .footer-contact h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 20px;
   color: #ffffff;
 }
@@ -606,8 +606,8 @@ h3 {
 .journal-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem; /* 24px to rem */
-  margin-bottom: 2.5rem; /* 40px to rem */
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
   width: 100%;
 }
 
@@ -878,5 +878,18 @@ h3 {
 @media (max-width: 768px) {
     .contact-info-container {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Add/update these media queries */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem; /* Smaller title for mobile */
+        margin: 15px; /* Less margin */
+    }
+
+    .subtitle {
+        font-size: 1.25rem; /* Smaller subtitle for mobile */
+        margin: 20px; /* Less margin */
     }
 }
