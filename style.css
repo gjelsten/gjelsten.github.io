@@ -893,3 +893,15 @@ h3 {
         margin: 20px; /* Less margin */
     }
 }
+
+.logo-image {
+    height: 160px; /* Halved from 320px */
+    width: auto;
+}
+
+@media (max-width: 768px) {
+    .logo-image {
+        height: 100px; /* Halved from 200px */
+    }
+}
+
