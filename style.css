@@ -895,13 +895,13 @@ h3 {
 }
 
 .logo-image {
-    height: 160px; /* Halved from 320px */
+    height: 20vh; /* Instead of fixed pixels */
     width: auto;
 }
 
 @media (max-width: 768px) {
     .logo-image {
-        height: 100px; /* Halved from 200px */
+        height: 10vh; /* Smaller for mobile */
     }
 }
 
