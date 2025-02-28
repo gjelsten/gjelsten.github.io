@@ -890,13 +890,22 @@ h3 {
 
 
 .logo-image {
-    height: 17vh; /* Instead of fixed pixels */
+    height: 15vh; /* Base size */
     width: auto;
+    max-height: 160px; /* Add a maximum height */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) { /* iPad */
     .logo-image {
-        height: 9vh; /* Smaller for mobile */
+        height: 12vh;
+        max-height: 120px;
+    }
+}
+
+@media (max-width: 768px) { /* Smaller devices */
+    .logo-image {
+        height: 10vh;
+        max-height: 100px;
     }
 }
 
