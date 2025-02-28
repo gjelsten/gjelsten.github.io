@@ -890,13 +890,13 @@ h3 {
 
 
 .logo-image {
-    height: 20vh; /* Instead of fixed pixels */
+    height: 17vh; /* Instead of fixed pixels */
     width: auto;
 }
 
 @media (max-width: 768px) {
     .logo-image {
-        height: 10vh; /* Smaller for mobile */
+        height: 9vh; /* Smaller for mobile */
     }
 }
 
