@@ -39,48 +39,6 @@ body, html {
 }
 
 
-.background3 {
-  background: url('images/location5.jpg') no-repeat center center/cover;
-  width: 100%;
-  height: 75%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-	border-bottom-left-radius: 0px; /* Round the bottom-left corner */
-  border-bottom-right-radius: 0px; /* Round the bottom-right corner */
-  overflow: hidden; /* Ensures the rounded corners cut off the image properly */
-	background-color: transparent; /* Ensure no white behind the image */
-}
-
-
-.background4 {
-  background: url('images/background4.jpg') no-repeat center center/cover;
-  width: 100%;
-  height: 75%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-	border-bottom-left-radius: 0px; /* Round the bottom-left corner */
-  border-bottom-right-radius: 0px; /* Round the bottom-right corner */
-  overflow: hidden; /* Ensures the rounded corners cut off the image properly */
-	background-color: transparent; /* Ensure no white behind the image */
-}
-
-.background5 {
-  background: url('images/Portfolio-G1.jpg') no-repeat center center/cover;
-  width: 100%;
-  height: 75%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-	border-bottom-left-radius: 0px; /* Round the bottom-left corner */
-  border-bottom-right-radius: 0px; /* Round the bottom-right corner */
-  overflow: hidden; /* Ensures the rounded corners cut off the image properly */
-	background-color: transparent; /* Ensure no white behind the image */
-}
 
 
 
@@ -120,7 +78,7 @@ a:active {
 
 
 
-
+/* Hovedtekst til alle sidene */
 
 .about-section {
   background-color: #121212; /* Dark background */
@@ -205,6 +163,18 @@ a:active {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 h1 {
   font-size: 4rem;
   font-weight: 600; /* Make it the boldest */
@@ -224,6 +194,12 @@ h1 a:hover {
   text-decoration: none; /* Ensures no underline on hover */
   color: inherit; /* Keeps color consistent on hover */
 }
+
+
+
+
+
+
 
 
 .subtitle {
@@ -507,6 +483,14 @@ h3 {
   border-radius: 0px; /* Optional: rounded corners */
 }
 
+
+
+
+
+
+
+
+
 /* Lightbox styles */
 #lightbox {
   display: none;
@@ -701,11 +685,6 @@ h3 {
 
 
 
-
-
-
-
-
 /* Back to Index Button */
 .back-button-container {
   margin: 40px 0;
@@ -752,6 +731,19 @@ h3 {
     padding: 0.5rem 1.5rem; /* Changed from 8px 24px */
   }
 }
+
+/* Add this to your existing media queries */
+@media (max-width: 1024px) { /* iPad horizontal and smaller */
+    .modern-contact-button {
+        display: none;
+    }
+}
+
+
+
+
+
+
 
 /* Form Styles */
 .connect-section {
@@ -818,6 +810,7 @@ h3 {
     margin: 20px 0 0 auto;
     font-family: inherit;
 }
+
 
 /* Focus states */
 .modern-form input:focus,
@@ -893,6 +886,8 @@ h3 {
         margin: 20px; /* Less margin */
     }
 }
+
+
 
 .logo-image {
     height: 20vh; /* Instead of fixed pixels */
