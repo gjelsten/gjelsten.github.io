@@ -691,16 +691,19 @@ h3 {
   text-align: center;
 }
 
-.modern-back-button {
-  display: inline-block;
-  padding: 0.75rem 2rem; /* Changed from 12px 32px */
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
-  color: white;
-  text-decoration: none;
-  font-size: 0.875rem; /* Changed from 14px */
-  letter-spacing: 1px;
-  text-transform: uppercase;
+.modern-back-button,
+.modern-contact-button {
+    display: inline-block; /* Ensure it's always visible */
+    padding: 12px 32px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .contact-button-container {
@@ -709,33 +712,10 @@ h3 {
   right: 30px;
 }
 
-.modern-contact-button {
-  display: inline-block;
-  padding: 0.75rem 2rem; /* Changed from 12px 32px */
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
-  color: white;
-  text-decoration: none;
-  font-size: 0.875rem; /* Changed from 14px */
-  letter-spacing: 1px;
-}
-
-/* Adjust position for mobile */
-@media (max-width: 768px) {
-  .contact-button-container {
-    top: 20px;
-    right: 20px;
-  }
-  
-  .modern-contact-button {
-    padding: 0.5rem 1.5rem; /* Changed from 8px 24px */
-  }
-}
-
-/* Add this to your existing media queries */
-@media (max-width: 1024px) { /* iPad horizontal and smaller */
+/* Remove any media queries that might be hiding it */
+@media (max-width: 1024px) {
     .modern-contact-button {
-        display: none;
+        /* Remove or comment out any display: none here */
     }
 }
 
