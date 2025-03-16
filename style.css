@@ -203,8 +203,8 @@ h1 a:hover {
 /* This is the Director & cinematographer in Norway subtitle */
 
 .subtitle {
-  font-size: 2rem;
-	font-weight: 100; /* Make it bolder */
+  font-size: 3rem;
+	font-weight: 600; /* Make it bolder */
   color: white;
   margin: 30px;
   position: absolute;
