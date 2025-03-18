@@ -201,17 +201,40 @@ h1 a:hover {
 
 
 /* This is the Director & cinematographer in Norway subtitle */
-
 .subtitle {
-  font-size: 3rem;
-	font-weight: 600; /* Make it bolder */
+  font-size: 4rem;
+  font-weight: 600;
   color: white;
   margin: 30px;
   position: absolute;
   bottom: 0;
   right: 0;
   text-align: right;
+  max-width: 90%; /* Prevents text from overflowing */
 }
+
+/* Tablet (screens up to 1024px) */
+@media (max-width: 1024px) {
+  .subtitle {
+    font-size: 3.5rem;
+  }
+}
+
+/* Phone (screens up to 768px) */
+@media (max-width: 768px) {
+  .subtitle {
+    font-size: 2.5rem;
+  }
+}
+
+/* Small phones (screens up to 480px) */
+@media (max-width: 480px) {
+  .subtitle {
+    font-size: 2.5rem;
+  }
+}
+
+
 
 
 h3 {
