@@ -269,6 +269,7 @@ body {
 /* Hero Section */
 .hero-section {
   height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for mobile */
   background: #1a1a1a;
   position: relative;
   overflow: hidden;
@@ -361,7 +362,7 @@ body {
   text-align: left;
 }
 
-/* Photo Grid */
+/* Photo Grid - Default 3 columns for photography */
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -370,6 +371,43 @@ body {
   max-width: 100%;
   margin: 0;
   background: #1a1a1a;
+}
+
+/* Index Page Grid - 2 columns */
+.index-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  padding: 0;
+  max-width: 100%;
+  margin: 0;
+  background: #1a1a1a;
+}
+
+/* Play button overlay for index page grid only */
+.index-photo-grid .photo-item {
+  position: relative;
+}
+
+.index-photo-grid .photo-item::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 20px solid rgba(255, 255, 255, 0.9);
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.index-photo-grid .photo-item:hover::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 /* Films Grid Container */
@@ -708,6 +746,7 @@ body {
 /* Journal Styles */
 .journal-hero-section {
   height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for mobile */
   background: #1a1a1a;
   position: relative;
   overflow: hidden;
@@ -956,6 +995,7 @@ body {
 /* About Page Styles */
 .about-hero-section {
   height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for mobile */
   background: #1a1a1a;
   position: relative;
   overflow: hidden;
@@ -1142,6 +1182,7 @@ body {
 /* Photography Hero Section */
 .photography-hero-section {
   height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for mobile */
   background: #1a1a1a;
   position: relative;
   overflow: hidden;
@@ -1150,11 +1191,13 @@ body {
 .photography-hero-layout {
   display: flex;
   height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for mobile */
 }
 
 .photography-hero-main {
   flex: 1;
   height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for mobile */
   position: relative;
   overflow: hidden;
 }
@@ -1309,6 +1352,7 @@ body {
 /* Blog Post Styles */
 .blog-hero-section {
   height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for mobile */
   background: #1a1a1a;
   position: relative;
   overflow: hidden;
@@ -1676,6 +1720,37 @@ body {
 
 /* All mobile phones - perfect fit */
 @media (max-width: 600px) {
+  /* Shorter hero sections on mobile to show more content */
+  .hero-section,
+  .journal-hero-section,
+  .about-hero-section,
+  .photography-hero-section,
+  .blog-hero-section {
+    height: 75vh;
+    height: 75dvh;
+    min-height: 75vh;
+    min-height: 75dvh;
+  }
+  
+  /* Update hero layout heights to match shorter hero sections */
+  .hero-layout,
+  .journal-hero-layout,
+  .about-hero-layout,
+  .photography-hero-layout,
+  .blog-hero-layout {
+    height: 75vh;
+    height: 75dvh;
+  }
+  
+  .hero-main,
+  .journal-hero-main,
+  .about-hero-main,
+  .photography-hero-main,
+  .blog-hero-main {
+    height: 75vh;
+    height: 75dvh;
+  }
+  
   .photo-grid {
     grid-template-columns: 1fr;
     padding: 0;
@@ -1684,7 +1759,7 @@ body {
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
   }
-  
+
   .films-grid-container {
     padding: 0;
     margin: 0;
@@ -1692,7 +1767,7 @@ body {
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
   }
-  
+
   .photo-item {
     width: 100vw;
     aspect-ratio: 16/9;
@@ -1729,14 +1804,16 @@ body {
     font-size: 0.8rem;
     padding: 12px 20px;
     border-radius: 50px;
-    backdrop-filter: blur(50px) saturate(180%);
-    -webkit-backdrop-filter: blur(50px) saturate(180%);
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 
-      0 20px 40px rgba(0, 0, 0, 0.15),
-      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .nav-logo::before {
+    display: none;
   }
   
   .nav-menu {
