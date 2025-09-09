@@ -1889,10 +1889,16 @@ body {
   
   .about-hero-main {
     flex: 1;
-    height: 100vh;
+    height: 75vh;
+    height: 75dvh;
+    position: relative;
+    overflow: hidden;
   }
   
   .about-hero-main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     object-position: right center;
   }
   
@@ -1955,6 +1961,7 @@ body {
       0 8px 16px rgba(0, 0, 0, 0.1),
       inset 0 1px 0 rgba(255, 255, 255, 0.8),
       inset 0 -1px 0 rgba(255, 255, 255, 0.2);
+    z-index: 10;
   }
   
   .about-hero-text-overlay p {
