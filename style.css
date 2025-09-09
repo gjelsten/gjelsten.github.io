@@ -1674,6 +1674,31 @@ body {
   }
 }
 
+/* All mobile phones - perfect fit */
+@media (max-width: 600px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+    padding: 0;
+    gap: 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+  
+  .films-grid-container {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+  
+  .photo-item {
+    width: 100vw;
+    aspect-ratio: 16/9;
+  }
+}
+
 @media (max-width: 768px) {
   .nav-container {
     position: fixed;
