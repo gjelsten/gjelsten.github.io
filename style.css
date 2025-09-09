@@ -1730,37 +1730,6 @@ body {
 
 /* All mobile phones - perfect fit */
 @media (max-width: 600px) {
-  /* Remove all margins and padding on mobile */
-  html, body {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    overflow-x: hidden;
-    position: relative;
-  }
-  
-  /* Remove any default browser spacing */
-  * {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-  
-  /* Ensure body takes full height */
-  body {
-    min-height: 100vh;
-    min-height: 100dvh;
-  }
-  
-  /* Ensure all containers fill screen */
-  .main-container,
-  .films-grid-container,
-  .content-section {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-  }
-  
   /* Shorter hero sections on mobile to show more content */
   .hero-section,
   .journal-hero-section,
@@ -1771,8 +1740,6 @@ body {
     height: 75dvh;
     min-height: 75vh;
     min-height: 75dvh;
-    margin: 0 !important;
-    padding: 0 !important;
   }
   
   /* Update hero layout heights to match shorter hero sections */
@@ -1803,6 +1770,15 @@ body {
     margin-right: calc(-50vw + 50%);
   }
 
+  .index-photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+    gap: 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+
   .films-grid-container {
     padding: 0;
     margin: 0;
@@ -1815,20 +1791,12 @@ body {
     width: 100vw;
     aspect-ratio: 16/9;
   }
-  
-  /* Remove any top padding that might create empty space */
-  .main-container {
-    padding-top: 0 !important;
-  }
-  
-  /* Ensure hero sections start at very top */
-  .hero-section,
-  .journal-hero-section,
-  .about-hero-section,
-  .photography-hero-section,
-  .blog-hero-section {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+}
+
+/* Very small phones - single column for index grid */
+@media (max-width: 480px) {
+  .index-photo-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1862,16 +1830,14 @@ body {
     font-size: 0.8rem;
     padding: 12px 20px;
     border-radius: 50px;
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    backdrop-filter: blur(50px) saturate(180%);
+    -webkit-backdrop-filter: blur(50px) saturate(180%);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
     transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
-  }
-  
-  .nav-logo::before {
-    display: none;
   }
   
   .nav-menu {
@@ -1942,6 +1908,19 @@ body {
     text-align: left;
     padding: 1.5rem;
     max-width: 400px;
+    backdrop-filter: blur(40px) saturate(200%) brightness(110%);
+    -webkit-backdrop-filter: blur(40px) saturate(200%) brightness(110%);
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 
+      0 30px 60px rgba(0, 0, 0, 0.2),
+      0 8px 16px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.2);
   }
   
   .journal-hero-text-overlay h1 {
@@ -1963,12 +1942,26 @@ body {
     text-align: left;
     padding: 1.5rem;
     max-width: 400px;
+    backdrop-filter: blur(40px) saturate(200%) brightness(110%);
+    -webkit-backdrop-filter: blur(40px) saturate(200%) brightness(110%);
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 
+      0 30px 60px rgba(0, 0, 0, 0.2),
+      0 8px 16px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.2);
   }
   
   .about-hero-text-overlay p {
     font-size: clamp(1rem, 4vw, 1.4rem);
     text-align: left;
     margin-bottom: 1rem;
+    color: #fff;
   }
   
   .about-hero-buttons {
