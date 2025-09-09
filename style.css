@@ -1039,6 +1039,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .about-hero-text-overlay {
@@ -1730,73 +1731,309 @@ body {
 
 /* All mobile phones - perfect fit */
 @media (max-width: 600px) {
+  /* Remove any default margins that could cause gaps */
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
   /* Shorter hero sections on mobile to show more content */
   .hero-section,
   .journal-hero-section,
-  .about-hero-section,
-  .photography-hero-section,
   .blog-hero-section {
     height: 75vh;
     height: 75dvh;
     min-height: 75vh;
     min-height: 75dvh;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Photography page - full screen on mobile to eliminate gap */
+  .photography-hero-section {
+    height: 100vh;
+    height: 100dvh;
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* About page - full screen on mobile */
+  .about-hero-section {
+    height: 100vh;
+    height: 100dvh;
+    min-height: 100vh;
+    min-height: 100dvh;
   }
   
   /* Update hero layout heights to match shorter hero sections */
   .hero-layout,
   .journal-hero-layout,
-  .about-hero-layout,
-  .photography-hero-layout,
   .blog-hero-layout {
     height: 75vh;
     height: 75dvh;
   }
   
+  /* Photography layout - full height */
+  .photography-hero-layout {
+    height: 100vh;
+    height: 100dvh;
+  }
+  
+  /* About page layout - full height */
+  .about-hero-layout {
+    height: 100vh;
+    height: 100dvh;
+  }
+  
   .hero-main,
   .journal-hero-main,
-  .about-hero-main,
-  .photography-hero-main,
   .blog-hero-main {
     height: 75vh;
     height: 75dvh;
   }
   
+  /* About main - full height */
+  .about-hero-main {
+    height: 100vh;
+    height: 100dvh;
+  }
+  
+  /* Photography main - 75% height like Journal */
+  .photography-hero-main {
+    height: 75vh;
+    height: 75dvh;
+  }
+  
+  /* Mobile Photo Grid - Clean Grid Implementation */
   .photo-grid {
+    display: grid;
     grid-template-columns: 1fr;
-    padding: 0;
     gap: 0;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
+    padding: 0;
+    margin: 0;
+    width: 100%;
   }
 
   .index-photo-grid {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 0;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
+    padding: 0;
+    margin: 0;
+    width: 100%;
   }
 
   .films-grid-container {
     padding: 0;
     margin: 0;
+    width: 100%;
+  }
+
+  .photo-item {
+    width: 100%;
+    aspect-ratio: 16/9;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Photography page specific - remove gap between hero and grid */
+  .photography-hero-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  .photography-hero-layout {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  .photography-hero-main {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  .photography-hero-section + .films-grid-container {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  /* Photography hero text overlay - positioned for 75% height */
+  .photography-hero-text-overlay {
+    position: absolute;
+    bottom: 4rem;
+    left: 1rem;
+    text-align: left;
+    padding: 1.5rem;
+    max-width: 400px;
+    backdrop-filter: blur(40px) saturate(200%) brightness(110%);
+    -webkit-backdrop-filter: blur(40px) saturate(200%) brightness(110%);
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 
+      0 30px 60px rgba(0, 0, 0, 0.2),
+      0 8px 16px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.2);
+    z-index: 10;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .photography-hero-text-overlay p {
+    font-size: clamp(1rem, 4vw, 1.4rem);
+    text-align: left;
+    line-height: 1.6;
+    color: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .films-grid-container {
+    margin: 0 !important;
+    padding: 0 !important;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
   }
-
-  .photo-item {
-    width: 100vw;
-    aspect-ratio: 16/9;
+  
+  /* Ensure specific divs have no margins on mobile - exclude blog content */
+  .hero-section div,
+  .photography-hero-section div,
+  .about-hero-section div,
+  .journal-hero-section div,
+  .photo-grid div,
+  .films-grid-container div {
+    margin: 0 !important;
   }
 }
 
-/* Very small phones - single column for index grid */
-@media (max-width: 480px) {
+/* Small mobile screens and zoomed out - single column for index grid */
+@media (max-width: 500px) {
   .index-photo-grid {
     grid-template-columns: 1fr;
+  }
+  
+  /* Fix hero image jumping on smallest phones */
+  .photography-hero-section {
+    height: 100vh !important;
+    height: 100dvh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .photography-hero-layout {
+    height: 100vh !important;
+    height: 100dvh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .photography-hero-main {
+    height: 100vh !important;
+    height: 100dvh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Fix grid gaps on smallest phones */
+  .photo-grid {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+  }
+  
+  .films-grid-container {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+  }
+  
+  .photo-item {
+    width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+  }
+  
+  .photo-item img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Blog post content - restore proper spacing */
+  .blog-content,
+  .blog-content p,
+  .blog-content h1,
+  .blog-content h2,
+  .blog-content h3,
+  .blog-content h4,
+  .blog-content h5,
+  .blog-content h6,
+  .blog-content ul,
+  .blog-content ol,
+  .blog-content li {
+    margin: 1rem 0 !important;
+    padding: 0 !important;
+  }
+  
+  .blog-content h1,
+  .blog-content h2,
+  .blog-content h3 {
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .blog-content p:first-child {
+    margin-top: 0 !important;
+  }
+  
+  .blog-content p:last-child {
+    margin-bottom: 0 !important;
+  }
+  
+  /* Blog post main container - restore proper spacing */
+  .main-container {
+    padding: 2rem 1rem !important;
+    margin: 0 !important;
+  }
+  
+  .blog-post-content {
+    margin: 0 !important;
+    padding: 0 !important;
   }
 }
 
@@ -1889,8 +2126,8 @@ body {
   
   .about-hero-main {
     flex: 1;
-    height: 75vh;
-    height: 75dvh;
+    height: 100vh;
+    height: 100dvh;
     position: relative;
     overflow: hidden;
   }
@@ -1904,12 +2141,22 @@ body {
   
   .journal-hero-main {
     flex: 1;
-    height: 100vh;
+    height: 75vh;
+    height: 75dvh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .journal-hero-main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
   
   .journal-hero-text-overlay {
     position: absolute;
-    bottom: 1rem;
+    bottom: 4rem;
     left: 1rem;
     text-align: left;
     padding: 1.5rem;
@@ -1927,6 +2174,10 @@ body {
       0 8px 16px rgba(0, 0, 0, 0.1),
       inset 0 1px 0 rgba(255, 255, 255, 0.8),
       inset 0 -1px 0 rgba(255, 255, 255, 0.2);
+    z-index: 10;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
   .journal-hero-text-overlay h1 {
@@ -1939,6 +2190,9 @@ body {
     font-size: clamp(1rem, 4vw, 1.4rem);
     text-align: left;
     line-height: 1.6;
+    color: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
   
   .about-hero-text-overlay {
@@ -2186,7 +2440,7 @@ body {
   }
   
   .journal-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 1rem;
   }
   
@@ -2205,9 +2459,23 @@ body {
     padding: 1rem;
   }
   
+  .journal-container {
+    padding: 2rem 1rem;
+  }
+  
   .journal-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+  
+  .journal-card {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .journal-image {
+    height: 200px;
+    width: 100%;
   }
   
   #videoPlayer {
