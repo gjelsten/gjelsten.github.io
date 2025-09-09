@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Storytelling in Commercial Films | Espen Gjelsten</title>
+  <meta name="description" content="Commercial film director Espen Gjelsten shares insights on authentic storytelling in brand communication. Learn how personal narratives create deeper audience connections in commercial work.">
+  <link rel="canonical" href="https://espengjelsten.com/personal-storytelling-commercial-films.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Modern Navigation Menu -->
+  <nav class="nav-container">
+    <div class="nav-content">
+      <a href="index.html" class="nav-logo"><span>Espen Gjelsten</span></a>
+      
+      <ul class="nav-menu">
+        <li><a href="photography.html"><span>Photography</span></a></li>
+        <li><a href="journal.html" class="active"><span>Journal</span></a></li>
+        <li><a href="about.html"><span>About</span></a></li>
+      </ul>
+      
+    </div>
+    <div class="nav-toggle" id="nav-toggle">
+      <div class="hamburger">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="mobile-menu-content">
+        <a href="index.html">Home</a>
+        <a href="photography.html">Photography</a>
+        <a href="journal.html">Journal</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Blog Hero Section -->
+  <section class="blog-hero-section">
+    <div class="blog-hero-main">
+      <img src="images/Portfolio-A1.jpg" alt="Personal Storytelling" class="blog-hero-image">
+      <div class="blog-hero-text-overlay">
+        <div class="blog-hero-meta">
+          <span>Strategy</span>
+          <span>•</span>
+          <span>Oct 2024</span>
+        </div>
+        <h1 class="blog-hero-title">Why You Need to Get Personal to Reach Your Audience</h1>
+        <p class="blog-hero-subtitle">The importance of authentic storytelling in commercial work and brand communication</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Post Content -->
+  <div class="blog-post-container">
+    <article class="blog-post-content">
+      <p>People are consuming more media today than at any other time in history. And, we've become pretty good at tuning out anything that doesn't resonate.</p>
+      
+      <p>So, how do you break through the noise? By being personal. By being authentic.</p>
+      
+      <div class="espen-gallery">
+        <img src="images/Portfolio-F1.jpg" alt="Example of authentic storytelling in commercial film" class="espen-gallery-item" onclick="openLightbox(this)">
+        <img src="images/Portfolio-F2.jpg" alt="Behind the scenes of personal brand storytelling" class="espen-gallery-item" onclick="openLightbox(this)">
+        <img src="images/Portfolio-F3.jpg" alt="Creating emotional connection through film" class="espen-gallery-item" onclick="openLightbox(this)">
+      </div>
+      
+      <h2>The Emotional Hook</h2>
+      <p>People don't remember everything they see or hear. But they do remember how something made them feel. Think about the last ad or film you loved. It wasn't the product specs or tagline that stuck with you—it was the story, the emotion, the connection.</p>
+      
+      <div class="espen-gallery">
+        <img src="images/Portfolio-C1.jpg" alt="Commercial filmmaking with authentic approach" class="espen-gallery-item" onclick="openLightbox(this)">
+        <img src="images/Portfolio-C2.jpg" alt="Visual storytelling for brands" class="espen-gallery-item" onclick="openLightbox(this)">
+        <img src="images/Portfolio-C3.jpg" alt="Personal connection in brand films" class="espen-gallery-item" onclick="openLightbox(this)">
+      </div>
+      
+      <h2>Authenticity in commercial films</h2>
+      <p>As a filmmaker, I've learned that the most effective stories are the ones rooted in truth. Whether it's a brand film, a short narrative, or a commercial, the emotional core must feel real.</p>
+      
+      <p>That's the power of authenticity. When you create content that feels real, raw, and personal, you move beyond just "information." You create moments that linger in the mind and heart.</p>
+      
+      <h2>People connect to people</h2>
+      <p>A story about someone's journey—their struggles, triumphs, and moments of truth—will always resonate more deeply than a generic message.</p>
+      
+      <p>In the end, it's all about connection: When you tap into that, you're not just reaching your audience—you're giving them something they'll remember.</p>
+    </article>
+    
+    <!-- Back to Journal Button -->
+    <div class="blog-back-container">
+      <a href="journal.html" class="blog-back-button"><span>← Back to Journal</span></a>
+    </div>
+  </div>
+
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" class="lightbox-content" onclick="event.stopPropagation()">
+  </div>
+
+  <!-- Scripts -->
+  <script src="menu.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
