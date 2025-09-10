@@ -1372,7 +1372,6 @@ body {
 .blog-hero-layout {
   display: flex;
   height: 100%;
-  width: 100%;
 }
 
 .blog-hero-main {
@@ -1404,7 +1403,7 @@ body {
   bottom: 2rem;
   left: 2rem;
   text-align: left;
-  z-index: 100;
+  z-index: 10;
   backdrop-filter: blur(40px) saturate(200%) brightness(110%);
   -webkit-backdrop-filter: blur(40px) saturate(200%) brightness(110%);
   background: linear-gradient(135deg, 
@@ -1414,14 +1413,13 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 30px;
   padding: 2rem;
-  max-width: 600px;
+  max-width: 500px;
   overflow: hidden;
   box-shadow: 
     0 30px 60px rgba(0, 0, 0, 0.2),
     0 8px 16px rgba(0, 0, 0, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.8),
     inset 0 -1px 0 rgba(255, 255, 255, 0.2);
-  transform-style: preserve-3d;
 }
 
 .blog-hero-text-overlay::before {
@@ -1451,7 +1449,7 @@ body {
 
 .blog-hero-text-overlay h1 {
   font-size: clamp(1.5rem, 3.75vw, 3rem);
-  font-weight: 400;
+  font-weight: 700;
   color: #fff;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -1460,10 +1458,10 @@ body {
 }
 
 .blog-hero-text-overlay p {
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
   color: #fff;
   line-height: 1.6;
-  margin: 0 0 1.5rem 0;
+  margin: 0;
   text-align: left;
 }
 
@@ -1741,10 +1739,8 @@ body {
   .hero-section,
   .journal-hero-section,
   .blog-hero-section {
-    height: 75vh;
-    height: 75dvh;
-    min-height: 75vh;
-    min-height: 75dvh;
+    height: 100vw;
+    min-height: 100vw;
     margin: 0 !important;
     padding: 0 !important;
   }
@@ -1771,8 +1767,7 @@ body {
   .hero-layout,
   .journal-hero-layout,
   .blog-hero-layout {
-    height: 75vh;
-    height: 75dvh;
+    height: 100vw;
   }
   
   /* Photography layout - full height */
@@ -1790,8 +1785,8 @@ body {
   .hero-main,
   .journal-hero-main,
   .blog-hero-main {
-    height: 75vh;
-    height: 75dvh;
+    height: 100vw;
+    position: relative !important;
   }
   
   /* About main - full height */
@@ -2268,28 +2263,78 @@ body {
   
   .blog-hero-main {
     flex: 1;
-    height: 100vh;
+    height: 75vh;
+    height: 75dvh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .blog-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
   
   .blog-hero-text-overlay {
-    bottom: 2rem;
-    left: 2rem;
-    right: auto;
+    position: absolute;
+    bottom: 4rem;
+    left: 1rem;
     text-align: left;
-    padding: 2rem;
-    max-width: 500px;
-    position: fixed;
+    padding: 1.5rem;
+    max-width: 400px;
+    backdrop-filter: blur(40px) saturate(200%) brightness(110%);
+    -webkit-backdrop-filter: blur(40px) saturate(200%) brightness(110%);
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 
+      0 30px 60px rgba(0, 0, 0, 0.2),
+      0 8px 16px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.2);
+    z-index: 10;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
   .blog-hero-text-overlay h1 {
-    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-size: clamp(1.5rem, 3.75vw, 3rem);
     text-align: left;
+    line-height: 1.2;
   }
   
   .blog-hero-text-overlay p {
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-size: clamp(1rem, 4vw, 1.4rem);
     text-align: left;
+    line-height: 1.6;
+    color: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
+  
+  .blog-hero-text-overlay h1 {
+    font-size: clamp(1.5rem, 3.75vw, 3rem);
+    text-align: left;
+    line-height: 1.2;
+    color: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Blog hero image - image itself is the square container */
+  .blog-hero-image {
+    width: 100vw !important;
+    height: 100vw !important;
+    object-fit: cover !important;
+    object-position: top !important;
+    position: relative !important;
+  }
+
   
   .blog-hero-buttons {
     flex-direction: column;
@@ -2401,7 +2446,8 @@ body {
   }
   
   .espen-gallery {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
   }
   
   .journal-gallery {
@@ -2430,8 +2476,8 @@ body {
   }
   
   .journal-main-text .espen-gallery {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
     margin: 1.5rem 0;
   }
   
