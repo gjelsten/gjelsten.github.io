@@ -2393,6 +2393,12 @@ body {
     gap: 0.5rem;
   }
   
+  /* Ensure blog post galleries work consistently on mobile */
+  .blog-post-content .espen-gallery {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.5rem;
+  }
+  
   .journal-gallery {
     grid-template-columns: 1fr;
   }
