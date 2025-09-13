@@ -108,7 +108,17 @@
   
   <script src="script.js"></script>
 
+  <!-- Modal for videos -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content">
+      <button class="close-modal" id="closeModal">&times;</button>
+      <iframe id="videoPlayer" src="" frameborder="0" allowfullscreen></iframe>
+      <p id="videoDescription"></p>
+    </div>
+  </div>
+
   <!-- Scripts -->
+  <script src="modal.js"></script>
   <script src="menu.js"></script>
 
 </body>
