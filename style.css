@@ -195,8 +195,8 @@ body {
   z-index: 9998;
   opacity: 0;
   visibility: hidden;
-  transform: scale(0.8) translateY(-20px);
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  transform: scale(0.95) translateY(-10px);
+  transition: all 0.2s ease-out;
   transform-origin: top right;
 }
 
