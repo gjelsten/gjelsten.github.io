@@ -8,72 +8,322 @@
   <link rel="icon" type="image/x-icon" href="images/favicon.png">
   <link rel="stylesheet" href="style.css">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+      color: #ffffff;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    
+    .mileage-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    
+    .mileage-header {
+      text-align: left;
+      margin-bottom: 80px;
+      max-width: 900px;
+    }
+    
+    .mileage-header h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 24px;
+      color: #ffffff;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    
+    .mileage-header p {
+      font-size: 1.25rem;
+      color: #b8c5d6;
+      line-height: 1.7;
+      font-weight: 400;
+      max-width: 700px;
+    }
+    
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 32px;
+      margin-bottom: 60px;
+    }
+    
+    .card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card--compact {
+      padding: 20px;
+    }
+    
+    .card--compact h2 {
+      margin-bottom: 12px;
+    }
+    
+    .card--compact p {
+      margin-bottom: 12px;
+    }
+    
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    }
+    
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+    
+    .card h2 {
+      color: #ffffff;
+      font-size: 1.75rem;
+      margin-bottom: 24px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      position: relative;
+    }
+    
+    .card h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      border-radius: 1px;
+    }
+    
+    .card h3 {
+      color: #e2e8f0;
+      font-size: 1.125rem;
+      margin: 32px 0 16px 0;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+    
+    .card p {
+      color: #cbd5e1;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+    
+    .card ul {
+      color: #cbd5e1;
+      line-height: 1.7;
+      margin-left: 0;
+      list-style: none;
+    }
+    
+    .card li {
+      margin-bottom: 12px;
+      font-size: 1rem;
+      position: relative;
+      padding-left: 24px;
+    }
+    
+    .card li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #3b82f6;
+      font-weight: 600;
+    }
+    
+    .card strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+    
+    .contact-button {
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      color: white;
+      padding: 16px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+      border: none;
+      cursor: pointer;
+    }
+    
+    .contact-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
+    }
+    
+    .privacy-link {
+      color: #60a5fa;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      border-bottom: 1px solid transparent;
+    }
+    
+    .privacy-link:hover {
+      color: #3b82f6;
+      border-bottom-color: #3b82f6;
+    }
+    
+    .card a {
+      color: #60a5fa;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border-bottom: 1px solid transparent;
+    }
+    
+    .card a:hover {
+      color: #3b82f6;
+      border-bottom-color: #3b82f6;
+    }
+    
+    .feature-highlight {
+      background: rgba(59, 130, 246, 0.1);
+      border-left: 3px solid #3b82f6;
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    
+    .feature-highlight p {
+      margin-bottom: 0;
+      color: #e2e8f0;
+      font-weight: 500;
+    }
+    
+    @media (max-width: 768px) {
+      .mileage-container {
+        padding: 40px 16px;
+      }
+      
+      .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      
+      .mileage-header {
+        margin-bottom: 60px;
+      }
+      
+      .card {
+        padding: 32px 24px;
+      }
+      
+      .card h2 {
+        font-size: 1.5rem;
+      }
+      
+      .card h3 {
+        font-size: 1.125rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .mileage-container {
+        padding: 32px 16px;
+      }
+      
+      .card {
+        padding: 24px 20px;
+      }
+      
+      .contact-button {
+        padding: 14px 28px;
+        font-size: 0.95rem;
+      }
+    }
   </style>
 </head>
 <body>
   
 
-  <!-- Page Content using Journal post styles -->
-  <div class="blog-post-container">
-    <article id="mileage" class="blog-post-content">
-      <div class="blog-post-meta">
-     
-      </div>
+  <!-- Page Content with Modern Card Layout -->
+  <div class="mileage-container">
+    <!-- Header Section -->
+    <div class="mileage-header">
       <h1>Mileage Run Tracker</h1>
-      <p>Mileage gives you clear, beautiful mileage charts, accurate race predictions, and in-depth health stats — all powered by Apple Health.</p>
-      <p>Whether you’re a beginner or training for a marathon, it keeps you focused, consistent, and motivated.</p>
+      <p>Mileage Run Tracker gives you clear, detailed mileage charts, accurate race predictions, and in-depth health statistics — all powered by Apple Health. Whether you're a beginner, preparing for your first 5K, or training for a marathon, the app keeps you focused, consistent, and motivated.</p>
+    </div>
 
-      
+    <!-- Cards Grid -->
+    <div class="cards-grid">
+      <!-- Features Card -->
+      <div class="card">
+        <h2>Features</h2>
+        <ul>
+          <li><strong>Mileage charts:</strong> Weekly, monthly, and yearly running charts.</li>
+        </ul>
+        <div class="feature-highlight">
+          <p><strong>Premium Features:</strong></p>
+          <ul>
+            <li><strong>Race predictions:</strong> Get accurate finish time predictions based on your recent workouts and performance trends.</li>
+            <li><strong>Health stats:</strong> Track heart rate trends, VO₂ max, sleep patterns, and comprehensive health metrics.</li>
+            <li><strong>Widgets:</strong> iPhone and Apple Watch widgets.</li>
+          </ul>
+        </div>
+      </div>
 
-      <h2>Support</h2>
-      <p>No data? Check Apple Health permissions in Settings > Privacy &amp; Security > Health > Mileage.</p>
-      <p>Watch not syncing? Ensure both devices are connected and Health app is syncing.</p>
-      <p>Subscription issues? Manage through Settings > [Your Name] > Subscriptions.</p>
-
-      
-
-      <h2>Privacy Policy</h2>
-  
-      <h3>Your Data Stays Private</h3>
-      <p><strong>Your running data stays on your device. We only read from Apple Health and never share your data.</strong></p>
-
-      <h3>What We Access</h3>
-      <p>We request access to your Apple Health data including:</p>
-      <ul>
-        <li>Recent Running workouts</li>
-        <li>Heart rate (if available)</li>
-        <li>Sleep data</li>
-        <li>VO2 max</li>
+      <!-- Support Card -->
+      <div class="card">
+        <h2>Support</h2>
+        <p>No data visible? Check Apple Health permissions: Settings > Privacy &amp; Security > Health > Mileage.</p>
+        <p>Runs showing in wrong metric? Change to either km or miles in Mileage app settings. On Apple Watch, there is a dedicated setting directly in the app.</p>
+        <p>Subscription issues? Manage subscriptions via Settings > [Your Name] > Subscriptions.</p>
         
+        <h2>Contact</h2>
+        <p>Questions or feedback?</p>
+        <p>We'd love to hear what you think we could improve about the app. We usually respond within 24 hours.</p>
+        <p><a class="contact-button" href="mailto:gjelsten@gmail.com">gjelsten@gmail.com</a></p>
+      </div>
 
+      <!-- Privacy Policy Card (Summary) -->
+      <div class="card card--compact">
+        <h2>Privacy Policy</h2>
+        <p>Your Health data stays on your device. We only read from Apple Health to power features like charts and predictions. We never store, sell, or share your data. All processing is local and protected by HealthKit.</p>
+        <p><a href="mileage-privacy-policy.html" class="privacy-link">Read the full Privacy Policy</a></p>
+      </div>
 
-      </ul>
-      <p>This data is used only to show your running statistics and progress within the app.</p>
+      <!-- Terms & Contact Card -->
+      <div class="card card--compact">
+        <h2>Terms of Use</h2>
+        <p>Our app uses Apple's standard EULA. Subscription terms and auto-renewal policies are governed by this agreement.</p>
+        <p><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank">View Apple Standard EULA</a></p>
 
-      <h3>What We Don't Do</h3>
-      <ul>
-        <li><strong>No data collection</strong> - Nothing is stored on our servers</li>
-        <li><strong>No sharing</strong> - Your data is never shared with anyone</li>
-        <li><strong>No selling</strong> - We don't sell or monetize your information</li>
-        <li><strong>No cloud storage</strong> - Everything stays on your iPhone</li>
-      </ul>
-
-      <h3>Your Control</h3>
-      <ul>
-        <li>Choose which data to share through iOS Settings &gt; Privacy &amp; Security &gt; Health</li>
-        <li>Revoke access anytime without affecting your Health app data</li>
-        <li>Delete the app to completely remove access</li>
-      </ul>
-
-      <h3>Security</h3>
-      <p>Your data is protected by Apple's HealthKit security, including encryption and biometric authentication. All processing happens locally on your device.</p>
-
-
-      <h2>Contact</h2>
-      <p>Questions or feedback?</p>
-      <p><a class="contact-button" href="mailto:gjelsten@gmail.com">gjelsten@gmail.com</a></p>
-      <p>We respond within 24 hours.</p>
-    </article>
+        <h2>Contact</h2>
+        <p>Questions or feedback?</p>
+        <p><a class="contact-button" href="mailto:gjelsten@gmail.com">gjelsten@gmail.com</a></p>
+      </div>
+    </div>
   </div>
 
   

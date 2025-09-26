@@ -1061,6 +1061,8 @@ body {
   background: #1a1a1a;
   position: relative;
   overflow: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .about-hero-layout {
@@ -1073,6 +1075,8 @@ body {
   flex: 1;
   position: relative;
   overflow: hidden;
+  height: 100%;
+  width: 100%;
 }
 
 .about-hero-main::after {
@@ -1087,14 +1091,39 @@ body {
   pointer-events: none;
 }
 
-.about-hero-main-image {
+#about .hero-main-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
-  object-position: center;
+  object-position: 75% center;
+}
+
+/* Responsive object positioning for About hero image - always keep right side (where Espen is) in focus */
+@media (max-width: 1200px) {
+  #about .hero-main-image {
+    object-position: 80% center;
+  }
+}
+
+@media (max-width: 768px) {
+  #about .hero-main-image {
+    object-position: 85% center;
+  }
+}
+
+@media (max-width: 600px) {
+  #about .hero-main-image {
+    object-position: 90% center;
+  }
+}
+
+@media (max-width: 480px) {
+  #about .hero-main-image {
+    object-position: 95% center;
+  }
 }
 
 .about-hero-text-overlay {
@@ -1161,8 +1190,9 @@ body {
 
 .about-connect-button {
   display: inline-block;
+  background: rgba(0, 0, 0, 0.3);
   background: rgba(255, 255, 255, 0.15);
-  color: #fff;
+  color: #fff !important;
   text-decoration: none;
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
@@ -1171,6 +1201,8 @@ body {
   transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .about-connect-button:hover {
@@ -1188,11 +1220,12 @@ body {
   height: 40px;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
-  color: #fff;
+  color: #fff !important;
   text-decoration: none;
   transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .about-social-button:hover {
@@ -1203,7 +1236,7 @@ body {
 
 .about-social-button i {
   font-size: 1.2rem;
-  color: #fff;
+  color: #fff !important;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
@@ -1767,6 +1800,7 @@ body {
 @media (max-width: 1024px) and (min-width: 768px) {
   .about-connect-button {
     background: rgba(255, 255, 255, 0.25);
+    color: #fff !important;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.4);
@@ -1775,10 +1809,15 @@ body {
   
   .about-social-button {
     background: rgba(255, 255, 255, 0.25);
+    color: #fff !important;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.4);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-social-button i {
+    color: #fff !important;
   }
 }
 
@@ -1814,10 +1853,12 @@ body {
     padding: 0 !important;
   }
   
-  /* About page - same as index page for consistent sizing */
-  .about-hero-section {
-    height: 100vw;
-    min-height: 100vw;
+  /* About page - full screen height for proper image display */
+  #about.hero-section {
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
   }
   
   /* Update hero layout heights to match shorter hero sections */
@@ -1832,9 +1873,10 @@ body {
     height: 100vw;
   }
   
-  /* About page layout - same as index page */
-  .about-hero-layout {
-    height: 100vw;
+  /* About page layout - full screen height */
+  #about .hero-layout {
+    height: 100vh !important;
+    height: 100dvh !important;
   }
   
   .hero-main,
@@ -1844,9 +1886,10 @@ body {
     position: relative !important;
   }
   
-  /* About main - same as index page for consistent sizing */
-  .about-hero-main {
-    height: 100vw;
+  /* About main - full screen height for proper image display */
+  #about .hero-main {
+    height: 100vh !important;
+    height: 100dvh !important;
     position: relative !important;
   }
   
@@ -2075,10 +2118,10 @@ body {
   }
   
   
-  .about-hero-main {
+  #about .hero-main {
     flex: 1;
-    height: 100vh;
-    height: 100dvh;
+    height: 100vh !important;
+    height: 100dvh !important;
     position: relative;
     overflow: hidden;
   }
@@ -2492,4 +2535,22 @@ body {
     font-size: 0.9rem;
     padding: 0.4rem 0.8rem;
   }
+}
+
+/* Force About page to always use full screen height on all devices */
+#about.hero-section {
+  height: 100vh !important;
+  height: 100dvh !important;
+  min-height: 100vh !important;
+  min-height: 100dvh !important;
+}
+
+#about .hero-layout {
+  height: 100vh !important;
+  height: 100dvh !important;
+}
+
+#about .hero-main {
+  height: 100vh !important;
+  height: 100dvh !important;
 }
