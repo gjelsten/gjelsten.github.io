@@ -1190,25 +1190,25 @@ body {
 
 .about-connect-button {
   display: inline-block;
-  background: rgba(0, 0, 0, 0.3);
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff !important;
+  background: rgba(255, 255, 255, 0.9);
+  color: #1a1a1a !important;
   text-decoration: none;
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
-  font-weight: 500;
+  font-weight: 600;
   font-size: clamp(0.9rem, 2vw, 1.1rem);
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .about-connect-button:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 1);
+  color: #1a1a1a !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -1218,26 +1218,28 @@ body {
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 50%;
-  color: #fff !important;
+  color: #1a1a1a !important;
   text-decoration: none;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .about-social-button:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 1);
+  color: #1a1a1a !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 .about-social-button i {
   font-size: 1.2rem;
-  color: #fff !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  color: #1a1a1a !important;
+  text-shadow: none;
 }
 
 .about-link {
@@ -1799,25 +1801,25 @@ body {
 /* iPad and Tablet specific fixes */
 @media (max-width: 1024px) and (min-width: 768px) {
   .about-connect-button {
-    background: rgba(255, 255, 255, 0.25);
-    color: #fff !important;
+    background: rgba(255, 255, 255, 0.9);
+    color: #1a1a1a !important;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   }
   
   .about-social-button {
-    background: rgba(255, 255, 255, 0.25);
-    color: #fff !important;
+    background: rgba(255, 255, 255, 0.9);
+    color: #1a1a1a !important;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   }
   
   .about-social-button i {
-    color: #fff !important;
+    color: #1a1a1a !important;
   }
 }
 
@@ -2215,15 +2217,20 @@ body {
   .about-connect-button {
     font-size: clamp(0.8rem, 3vw, 1rem);
     padding: 0.6rem 1.2rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: #1a1a1a !important;
   }
   
   .about-social-button {
     width: 35px;
     height: 35px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #1a1a1a !important;
   }
   
   .about-social-button i {
     font-size: 1rem;
+    color: #1a1a1a !important;
   }
   
   .photography-hero-text-overlay {
