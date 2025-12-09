@@ -1971,7 +1971,7 @@ body > .films-grid-container > .photo-grid {
   
   .films-grid-container {
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 4rem 0 0 0 !important;
     width: 100%;
   }
   
@@ -2353,9 +2353,9 @@ body > .films-grid-container > .photo-grid {
   }
   
   .films-grid-container {
-    padding-top: 0;
+    padding-top: 4rem;
   }
-  
+
   .main-container {
     padding-top: 5rem;
   }
