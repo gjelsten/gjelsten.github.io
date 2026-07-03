@@ -4,20 +4,35 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeModal = document.getElementById("closeModal");
   const videoPlayer = document.getElementById("videoPlayer");
   const videoDescription = document.getElementById("videoDescription");
-  const photoItems = document.querySelectorAll(".photo-item");
 
-  // Open Modal
-  photoItems.forEach(item => {
-    item.addEventListener("click", () => {
-      const videoURL = item.getAttribute("data-video");
-      const description = item.getAttribute("data-description");
+  // Event delegation — works on dynamically replaced hero items too
+  document.addEventListener("click", (e) => {
+    const item = e.target.closest(".photo-item[data-video]");
+    if (!item) return;
+
+    const videoURL = item.getAttribute("data-video");
+    const description = item.getAttribute("data-description");
+    if (!videoURL) return;
+
+    {
       
       // Convert video URL to embed format
       let embedURL = videoURL;
       
       // Handle Vimeo URLs
       if (videoURL.includes("vimeo.com")) {
-        embedURL = videoURL.replace("vimeo.com", "player.vimeo.com/video");
+        if (videoURL.includes("player.vimeo.com")) {
+          // Already an embed URL, use as-is
+          embedURL = videoURL;
+        } else {
+          // Standard vimeo.com URL — extract ID and optional hash
+          const vimeoMatch = videoURL.match(/vimeo\.com\/(\d+)\/?([a-f0-9]+)?/);
+          if (vimeoMatch) {
+            const videoId = vimeoMatch[1];
+            const hash = vimeoMatch[2];
+            embedURL = `https://player.vimeo.com/video/${videoId}?${hash ? 'h=' + hash + '&' : ''}autoplay=1&loop=1&autopause=0`;
+          }
+        }
       }
       // Handle YouTube URLs
       else if (videoURL.includes("youtube.com") || videoURL.includes("youtu.be")) {
@@ -45,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Show modal
       modalOverlay.style.display = "flex";
-    });
+    }
   });
 
   // Close Modal
