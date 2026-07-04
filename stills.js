@@ -50,6 +50,25 @@ document.addEventListener('DOMContentLoaded', function () {
       '</div>';
   }
 
+  let savedScrollY = 0;
+
+  function getScroll() {
+    return window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+  }
+
+  function restoreScroll(y) {
+    window.scrollTo(0, y);
+    document.documentElement.scrollTop = y;
+    document.body.scrollTop = y;
+  }
+
+  // Save scroll in capture phase — BEFORE GLightbox opens and locks the page
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('.glightbox')) {
+      savedScrollY = getScroll();
+    }
+  }, true);
+
   function initLightbox() {
     if (typeof GLightbox === 'undefined') return;
     if (lightbox) lightbox.destroy();
@@ -58,7 +77,13 @@ document.addEventListener('DOMContentLoaded', function () {
       touchNavigation: true,
       loop: true,
       openEffect: 'fade',
-      closeEffect: 'fade'
+      closeEffect: 'fade',
+      onClose: function () {
+        restoreScroll(savedScrollY);
+        requestAnimationFrame(function () {
+          restoreScroll(savedScrollY);
+        });
+      }
     });
   }
 
