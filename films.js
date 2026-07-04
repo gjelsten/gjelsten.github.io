@@ -5,14 +5,19 @@ document.addEventListener('DOMContentLoaded', function () {
   const gridItems = document.querySelectorAll('.portfolio-grid .film-item');
   const filterButtons = document.querySelectorAll('.films-filter-btn');
   const defaultHeroHTML = hero ? hero.innerHTML : '';
-  let defaultHeroItem = null;
   let activeGridHero = null;
 
   if (!filterBar || !grid || !hero) return;
 
-  const temp = document.createElement('div');
-  temp.innerHTML = defaultHeroHTML;
-  defaultHeroItem = temp.querySelector('.film-item');
+  // Find the grid item that mirrors the default hero (same img src)
+  const heroImg = hero.querySelector('img');
+  const heroSrc = heroImg ? heroImg.getAttribute('src') : null;
+  const defaultHeroGridItem = heroSrc
+    ? Array.from(gridItems).find(function (item) {
+        const img = item.querySelector('img');
+        return img && img.getAttribute('src') === heroSrc;
+      })
+    : null;
 
   function itemMatchesFilter(item, category) {
     if (!item) return false;
@@ -91,7 +96,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setTimeout(function () {
       gridItems.forEach(function (item) {
-        if (itemMatchesFilter(item, category)) {
+        const isDefaultHero = item === defaultHeroGridItem && category === 'all';
+        if (itemMatchesFilter(item, category) && !isDefaultHero) {
           item.classList.remove('is-hidden');
           requestAnimationFrame(function () {
             item.classList.add('is-visible');

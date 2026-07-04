@@ -2331,8 +2331,8 @@ body > .films-grid-container > .photo-grid {
   
   .footer-inner {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 2.5rem var(--page-padding) 2rem;
+    gap: 1.5rem;
+    padding: 2.5rem var(--page-padding) 2.5rem;
   }
 
   .footer-center {
@@ -2340,7 +2340,9 @@ body > .films-grid-container > .photo-grid {
   }
 
   .footer-right {
-    display: none;
+    display: flex;
+    justify-content: flex-start;
+    justify-self: start;
   }
   
   .hero-layout {
