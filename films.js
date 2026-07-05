@@ -9,15 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (!filterBar || !grid || !hero) return;
 
-  // Find the grid item that mirrors the default hero (same img src)
-  const heroImg = hero.querySelector('img');
-  const heroSrc = heroImg ? heroImg.getAttribute('src') : null;
-  const defaultHeroGridItem = heroSrc
-    ? Array.from(gridItems).find(function (item) {
-        const img = item.querySelector('img');
-        return img && img.getAttribute('src') === heroSrc;
-      })
-    : null;
+  // Hero is now a background video, not a duplicated grid film,
+  // so no grid item should be hidden as a "hero duplicate".
+  const defaultHeroGridItem = null;
 
   function itemMatchesFilter(item, category) {
     if (!item) return false;

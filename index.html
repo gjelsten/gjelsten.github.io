@@ -28,6 +28,50 @@
 <!-- Canonical URL -->
 <link rel="canonical" href="https://espengjelsten.com">
 
+<!-- Hero background video (FILMS page) — scoped styles, no layout change to the hero box -->
+<style>
+  /* The hero box keeps its size from .portfolio-hero .portfolio-item (16/9) */
+  .hero-bg-video { cursor: default; }
+
+  /* Hide the film play-button triangle on the ambient hero video */
+  .films-grid-container .hero-bg-video::after { display: none !important; }
+
+  .hero-bg-video-frame {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 1;
+    background: var(--color-bg);
+  }
+
+  /* Cover the container exactly, like object-fit: cover */
+  .hero-bg-video-frame iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .hero-bg-video-poster {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 2;
+    transition: opacity 0.6s ease;
+  }
+
+  /* Hidden once the video is confirmed playing */
+  .hero-bg-video-poster.is-hidden-poster {
+    opacity: 0;
+    pointer-events: none;
+  }
+</style>
+
 </head>
 <body>
   <nav class="nav-container">
@@ -72,13 +116,18 @@
     </div>
 
     <div class="portfolio-hero">
-      <div class="photo-item portfolio-item film-item" data-category="brand" data-video="https://vimeo.com/1199763826/d66357c376" data-description="Bower | Regi, foto og etterarbeid Espen Gjelsten. Produsert av Havnevik">
-        <img src="images/Film_06_BRAND_Bower.jpg" alt="Bower">
-        <div class="portfolio-item-overlay"><span class="portfolio-item-caption">Bower</span></div>
+      <div class="photo-item portfolio-item film-item hero-bg-video" data-category="brand">
+        <div class="hero-bg-video-frame" id="heroBgVideo"></div>
+        <img src="images/Film_06_BRAND_Bower.jpg" alt="" class="hero-bg-video-poster">
       </div>
     </div>
 
     <div class="portfolio-grid index-photo-grid">
+
+      <div class="photo-item portfolio-item film-item" data-category="brand" data-video="https://vimeo.com/1199763826/d66357c376" data-description="Bower | Regi, foto og etterarbeid Espen Gjelsten. Produsert av Havnevik">
+        <img src="images/Film_06_BRAND_Bower.jpg" alt="Bower">
+        <div class="portfolio-item-overlay"><span class="portfolio-item-caption">Bower</span></div>
+      </div>
 
       <div class="photo-item portfolio-item film-item" data-category="doc" data-video="https://vimeo.com/1049302146?autoplay=1&loop=1&autopause=0" data-description="Freedom On Wheels | Regi, foto og etterarbeid Espen Gjelsten. Produsert av Sorentio">
         <img src="images/Film_02_DOC_FreedomOnWheels.jpg" alt="Freedom On Wheels">
@@ -103,11 +152,6 @@
       <div class="photo-item portfolio-item film-item" data-category="doc" data-video="https://vimeo.com/1044902855?autoplay=1&loop=1&autopause=0" data-description="Ålesund Maraton | Regi, foto og etterarbeid Espen Gjelsten. Produsert av Sorentio">
         <img src="images/Film_01_DOC_AlesundMaraton.jpg" alt="Ålesund Maraton">
         <div class="portfolio-item-overlay"><span class="portfolio-item-caption">Ålesund Maraton</span></div>
-      </div>
-
-      <div class="photo-item portfolio-item film-item" data-category="brand" data-video="https://vimeo.com/1199763826/d66357c376" data-description="Bower | Regi, foto og etterarbeid Espen Gjelsten. Produsert av Havnevik">
-        <img src="images/Film_06_BRAND_Bower.jpg" alt="Bower">
-        <div class="portfolio-item-overlay"><span class="portfolio-item-caption">Bower</span></div>
       </div>
 
     </div>
@@ -166,6 +210,85 @@
   <script src="modal.js"></script>
   <script src="films.js"></script>
   <script src="menu.js"></script>
-	
+
+  <!-- Hero background video (FILMS page) -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script>
+    (function () {
+      var VIDEO_ID = 1207173424;
+      var player = null;
+      var initializing = false;
+
+      function whenSdkReady(cb) {
+        if (typeof Vimeo !== 'undefined' && Vimeo.Player) { cb(); return; }
+        var tries = 0;
+        var timer = setInterval(function () {
+          if (typeof Vimeo !== 'undefined' && Vimeo.Player) {
+            clearInterval(timer);
+            cb();
+          } else if (++tries > 100) {
+            clearInterval(timer); // give up after ~5s, poster stays
+          }
+        }, 50);
+      }
+
+      function initHeroVideo() {
+        if (initializing) return;
+        var frame = document.getElementById('heroBgVideo');
+        if (!frame || typeof Vimeo === 'undefined' || !Vimeo.Player) return;
+
+        initializing = true;
+
+        if (player) {
+          try { player.destroy(); } catch (e) {}
+          player = null;
+        }
+        frame.innerHTML = '';
+
+        var item = frame.closest('.hero-bg-video');
+        var poster = item ? item.querySelector('.hero-bg-video-poster') : null;
+
+        player = new Vimeo.Player(frame, {
+          id: VIDEO_ID,
+          background: true,   // autoplay + muted + loop + no controls + no branding
+          autoplay: true,
+          loop: true,
+          muted: true,
+          controls: false,
+          responsive: false
+        });
+
+        player.ready().then(function () {
+          initializing = false;
+        }).catch(function () {
+          initializing = false;
+        });
+
+        // Reveal video once it actually plays; otherwise keep the poster (mobile autoplay block)
+        player.play().then(function () {
+          if (poster) poster.classList.add('is-hidden-poster');
+        }).catch(function () {
+          if (poster) poster.classList.remove('is-hidden-poster');
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        whenSdkReady(initHeroVideo);
+
+        // films.js restores the hero markup when filtering back to "All" —
+        // re-initialize the player whenever the frame exists without an iframe.
+        var heroWrap = document.querySelector('.portfolio-hero');
+        if (heroWrap) {
+          new MutationObserver(function () {
+            var frame = document.getElementById('heroBgVideo');
+            if (frame && !frame.querySelector('iframe') && !initializing) {
+              whenSdkReady(initHeroVideo);
+            }
+          }).observe(heroWrap, { childList: true, subtree: true });
+        }
+      });
+    })();
+  </script>
+
 </body>
 </html>
