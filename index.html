@@ -89,13 +89,11 @@
     object-fit: cover;
     display: block;
     z-index: 2;
-    transition: opacity 0.6s ease;
   }
 
-  /* Hidden once the video is confirmed playing */
+  /* Hidden instantly once the video is confirmed playing — no fade */
   .hero-bg-video-poster.is-hidden-poster {
-    opacity: 0;
-    pointer-events: none;
+    display: none;
   }
 </style>
 
