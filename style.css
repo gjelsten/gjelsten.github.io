@@ -2160,7 +2160,7 @@ body > .films-grid-container > .photo-grid {
   .index-photo-grid,
   .portfolio-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 0;
     padding: 0;
     margin: 0;
@@ -2744,7 +2744,7 @@ body > .films-grid-container > .photo-grid {
 
 @media (max-width: 600px) {
   .portfolio-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .hero-text-overlay h1 {
