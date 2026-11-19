@@ -8,22 +8,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function isStillsPage() {
     const path = window.location.pathname;
-    return path.includes('stills');
+    return path.includes('stills') || path.includes('photography');
   }
 
   function setPageNavActive() {
-    const onStills = isStillsPage();
+    const onStills = isStillsPage(); // also covers photography.html
 
     pageNavLinks.forEach(function(link) {
       const href = link.getAttribute('href') || '';
-      const isPhotographer = href.includes('stills');
-      link.classList.toggle('active', onStills ? isPhotographer : !isPhotographer);
+      const isPhotography = href.includes('stills') || href.includes('photography');
+      link.classList.toggle('active', onStills ? isPhotography : !isPhotography);
     });
 
     mobileNavLinks.forEach(function(link) {
       const href = link.getAttribute('href') || '';
-      const isPhotographer = href.includes('stills');
-      link.classList.toggle('active', onStills ? isPhotographer : !isPhotographer);
+      const isPhotography = href.includes('stills') || href.includes('photography');
+      link.classList.toggle('active', onStills ? isPhotography : !isPhotography);
     });
   }
 

@@ -3,10 +3,10 @@
 <head>
 
 <!-- Meta Title -->
-<title>Espen Gjelsten | Director & Photographer | Stories worth telling</title>
+<title>Espen Gjelsten | Film Director | Ålesund, Norway</title>
 
 <!-- Meta Description -->
-<meta name="description" content="Espen Gjelsten is a director and photographer based in Ålesund, Norway. Film and photography for brands, documentaries, sport and the human story.">
+<meta name="description" content="Espen Gjelsten is a film director based in Ålesund, Norway. Brand films and documentary for maritime, industrial and commercial clients.">
 
 <!-- Meta Keywords -->
 <meta name="keywords" content="director, photographer, film, photo, brand film, documentary, commercial, Ålesund, Norway, visual storytelling">
@@ -28,6 +28,75 @@
 <!-- Canonical URL -->
 <link rel="canonical" href="https://espengjelsten.com">
 
+<!-- Open Graph -->
+<meta property="og:title" content="Espen Gjelsten | Film Director | Ålesund, Norway">
+<meta property="og:description" content="Brand films and documentary for maritime, industrial and commercial clients.">
+<meta property="og:image" content="https://espengjelsten.com/images/Film_06_BRAND_Bower.jpg">
+<meta property="og:url" content="https://espengjelsten.com">
+<meta property="og:type" content="website">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Espen Gjelsten",
+  "jobTitle": "Director & Photographer",
+  "url": "https://espengjelsten.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/gjelsten",
+    "https://www.instagram.com/espengjelsten"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ålesund",
+    "addressCountry": "NO"
+  }
+}
+</script>
+
+<!-- Hero background video (FILMS page) — scoped styles, no layout change to the hero box -->
+<style>
+  /* The hero box keeps its size from .portfolio-hero .portfolio-item (16/9) */
+  .hero-bg-video { cursor: default; }
+
+  /* Hide the film play-button triangle on the ambient hero video */
+  .films-grid-container .hero-bg-video::after { display: none !important; }
+
+  .hero-bg-video-frame {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 1;
+    background: var(--color-bg);
+  }
+
+  /* Cover the container exactly, like object-fit: cover */
+  .hero-bg-video-frame iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .hero-bg-video-poster {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 2;
+  }
+
+  /* Hidden instantly once the video is confirmed playing — no fade */
+  .hero-bg-video-poster.is-hidden-poster {
+    display: none;
+  }
+</style>
+
 </head>
 <body>
   <nav class="nav-container">
@@ -36,11 +105,9 @@
 
       <div class="nav-menu">
         <div class="nav-menu-primary">
-          <a href="index.html" class="nav-link active">Director</a>
-          <span class="nav-menu-sep">&amp;</span>
-          <a href="stills.html" class="nav-link">Photographer</a>
+          <a href="index.html" class="nav-link active">Films</a>
+          <a href="photography.html" class="nav-link">Photography</a>
         </div>
-        <span class="nav-tagline-sub">Stories worth telling</span>
       </div>
 
       <div class="nav-toggle" id="nav-toggle">
@@ -55,8 +122,8 @@
     <div class="mobile-menu" id="mobile-menu">
       <div class="mobile-menu-content">
         <ul>
-          <li><a href="index.html" class="active">Director</a></li>
-          <li><a href="stills.html">Photographer</a></li>
+          <li><a href="index.html" class="active">Films</a></li>
+          <li><a href="photography.html">Photography</a></li>
         </ul>
       </div>
     </div>
@@ -74,13 +141,18 @@
     </div>
 
     <div class="portfolio-hero">
-      <div class="photo-item portfolio-item film-item" data-category="brand" data-video="https://vimeo.com/1199763826/d66357c376" data-description="Bower | Regi, foto og etterarbeid Espen Gjelsten. Produsert av Havnevik">
-        <img src="images/Film_06_BRAND_Bower.jpg" alt="Bower">
-        <div class="portfolio-item-overlay"><span class="portfolio-item-caption">Bower</span></div>
+      <div class="photo-item portfolio-item film-item hero-bg-video" data-category="brand">
+        <div class="hero-bg-video-frame" id="heroBgVideo"></div>
+        <img src="images/Film_08_SHOWREEL.jpg" alt="" class="hero-bg-video-poster">
       </div>
     </div>
 
     <div class="portfolio-grid index-photo-grid">
+
+      <div class="photo-item portfolio-item film-item" data-category="brand" data-video="https://vimeo.com/1199763826/d66357c376" data-description="Bower | Regi, foto og etterarbeid Espen Gjelsten. Produsert av Havnevik">
+        <img src="images/Film_06_BRAND_Bower.jpg" alt="Bower">
+        <div class="portfolio-item-overlay"><span class="portfolio-item-caption">Bower</span></div>
+      </div>
 
       <div class="photo-item portfolio-item film-item" data-category="doc" data-video="https://vimeo.com/1049302146?autoplay=1&loop=1&autopause=0" data-description="Freedom On Wheels | Regi, foto og etterarbeid Espen Gjelsten. Produsert av Sorentio">
         <img src="images/Film_02_DOC_FreedomOnWheels.jpg" alt="Freedom On Wheels">
@@ -107,9 +179,24 @@
         <div class="portfolio-item-overlay"><span class="portfolio-item-caption">Ålesund Maraton</span></div>
       </div>
 
-      <div class="photo-item portfolio-item film-item" data-category="brand" data-video="https://vimeo.com/1199763826/d66357c376" data-description="Bower | Regi, foto og etterarbeid Espen Gjelsten. Produsert av Havnevik">
-        <img src="images/Film_06_BRAND_Bower.jpg" alt="Bower">
-        <div class="portfolio-item-overlay"><span class="portfolio-item-caption">Bower</span></div>
+      <div class="photo-item portfolio-item film-item" data-category="brand" data-video="https://vimeo.com/826833154" data-description="Nils Sperre | Regi, foto og etterarbeid Espen Gjelsten. Produsert av Sorentio">
+        <img src="images/Film_12_NilsSperre.jpg" alt="Nils Sperre">
+        <div class="portfolio-item-overlay"><span class="portfolio-item-caption">Nils Sperre</span></div>
+      </div>
+
+      <div class="photo-item portfolio-item film-item" data-category="brand" data-video="https://vimeo.com/1247239259" data-description="Christie Nordang | Regi, foto og etterarbeid Espen Gjelsten. Produsert av Havnevik">
+        <img src="images/Film_11_ChristieNordang.jpg" alt="Christie Nordang">
+        <div class="portfolio-item-overlay"><span class="portfolio-item-caption">Christie Nordang</span></div>
+      </div>
+
+      <div class="photo-item portfolio-item film-item" data-category="doc" data-video="https://vimeo.com/1226987305" data-description="Nowegian Swim Expedition | Regi, foto og etterarbeid Espen Gjelsten. Produsert av Havnevik">
+        <img src="images/Film_10_Swim.jpg" alt="Nowegian Swim Expedition">
+        <div class="portfolio-item-overlay"><span class="portfolio-item-caption">Nowegian Swim Expedition</span></div>
+      </div>
+
+      <div class="photo-item portfolio-item film-item" data-category="doc" data-video="https://vimeo.com/1247913561" data-description="Sparebankstiftelsen Sparebanken Møre | Regi, foto og etterarbeid Espen Gjelsten. Produsert av Havnevik">
+        <img src="images/Film_09_Sparebank.jpg" alt="Sparebankstiftelsen Sparebanken Møre">
+        <div class="portfolio-item-overlay"><span class="portfolio-item-caption">Sparebankstiftelsen Sparebanken Møre</span></div>
       </div>
 
     </div>
@@ -141,12 +228,13 @@
     <div class="footer-inner">
       <div class="footer-left">
         <p class="footer-name">Espen Gjelsten</p>
+        <p class="footer-role">Director &amp; Photographer</p>
 
         <p class="footer-location">Ålesund, Norway</p>
       </div>
       <div class="footer-center">
         <div class="footer-social">
-          <a href="mailto:gjelsten@gmail.com" class="footer-icon" aria-label="Email">
+          <a href="mailto:hello@espengjelsten.com" class="footer-icon" aria-label="Email">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg>
           </a>
           <a href="https://www.linkedin.com/in/gjelsten" target="_blank" rel="noopener" class="footer-icon" aria-label="LinkedIn">
@@ -158,7 +246,7 @@
         </div>
       </div>
       <div class="footer-right">
-        <a href="mailto:gjelsten@gmail.com" class="footer-contact-btn">Get in touch</a>
+        <a href="mailto:hello@espengjelsten.com" class="footer-contact-btn">Get in touch</a>
       </div>
     </div>
   </footer>
@@ -167,6 +255,85 @@
   <script src="modal.js"></script>
   <script src="films.js"></script>
   <script src="menu.js"></script>
-	
+
+  <!-- Hero background video (FILMS page) -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script>
+    (function () {
+      var VIDEO_ID = 1207173424;
+      var player = null;
+      var initializing = false;
+
+      function whenSdkReady(cb) {
+        if (typeof Vimeo !== 'undefined' && Vimeo.Player) { cb(); return; }
+        var tries = 0;
+        var timer = setInterval(function () {
+          if (typeof Vimeo !== 'undefined' && Vimeo.Player) {
+            clearInterval(timer);
+            cb();
+          } else if (++tries > 100) {
+            clearInterval(timer); // give up after ~5s, poster stays
+          }
+        }, 50);
+      }
+
+      function initHeroVideo() {
+        if (initializing) return;
+        var frame = document.getElementById('heroBgVideo');
+        if (!frame || typeof Vimeo === 'undefined' || !Vimeo.Player) return;
+
+        initializing = true;
+
+        if (player) {
+          try { player.destroy(); } catch (e) {}
+          player = null;
+        }
+        frame.innerHTML = '';
+
+        var item = frame.closest('.hero-bg-video');
+        var poster = item ? item.querySelector('.hero-bg-video-poster') : null;
+
+        player = new Vimeo.Player(frame, {
+          id: VIDEO_ID,
+          background: true,   // autoplay + muted + loop + no controls + no branding
+          autoplay: true,
+          loop: true,
+          muted: true,
+          controls: false,
+          responsive: false
+        });
+
+        player.ready().then(function () {
+          initializing = false;
+        }).catch(function () {
+          initializing = false;
+        });
+
+        // Reveal video once it actually plays; otherwise keep the poster (mobile autoplay block)
+        player.play().then(function () {
+          if (poster) poster.classList.add('is-hidden-poster');
+        }).catch(function () {
+          if (poster) poster.classList.remove('is-hidden-poster');
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        whenSdkReady(initHeroVideo);
+
+        // films.js restores the hero markup when filtering back to "All" —
+        // re-initialize the player whenever the frame exists without an iframe.
+        var heroWrap = document.querySelector('.portfolio-hero');
+        if (heroWrap) {
+          new MutationObserver(function () {
+            var frame = document.getElementById('heroBgVideo');
+            if (frame && !frame.querySelector('iframe') && !initializing) {
+              whenSdkReady(initHeroVideo);
+            }
+          }).observe(heroWrap, { childList: true, subtree: true });
+        }
+      });
+    })();
+  </script>
+
 </body>
 </html>
