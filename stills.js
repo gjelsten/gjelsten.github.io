@@ -26,6 +26,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (category === 'all') {
       matches.push({ type: 'hero' });
+    } else {
+      const categoryHero = Array.from(gridItems).find(function (item) {
+        return item.dataset.heroFor && item.dataset.heroFor.split(' ').includes(category);
+      });
+      if (categoryHero) {
+        matches.push({ type: 'grid', el: categoryHero });
+      }
     }
 
     gridItems.forEach(function (item) {
@@ -48,6 +55,12 @@ document.addEventListener('DOMContentLoaded', function () {
       '">' +
       item.innerHTML +
       '</div>';
+  }
+
+  function itemMatchesHeroImage(item) {
+    const heroImage = hero.querySelector('.stills-item img');
+    const itemImage = item.querySelector('img');
+    return !!heroImage && !!itemImage && heroImage.src === itemImage.src;
   }
 
   let savedScrollY = 0;
@@ -119,7 +132,10 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(function () {
       gridItems.forEach(function (item) {
         const isHeroSource = item === activeGridHero;
-        const shouldShow = itemMatchesFilter(item, category) && !isHeroSource;
+        const shouldShow =
+          itemMatchesFilter(item, category) &&
+          !isHeroSource &&
+          !itemMatchesHeroImage(item);
 
         if (shouldShow) {
           item.classList.remove('is-hidden');
